@@ -1,0 +1,45 @@
+{
+  "$schema": "Project 数据源 / Project data source. 字段新增时同步更新 main.js 的引用。",
+  "items": [
+    {
+      "slug": "locowiki",
+      "img": "assets/images/locowiki-cover.png",
+      "titleKey": "projects.item1.title",
+      "descKey": "projects.item1.desc",
+      "tagsKeys": ["projects.item1.tags"],
+      "link": "pages/projects/project1.html"
+    },
+    {
+      "slug": "opendog",
+      "img": "assets/images/opendog-cover.png",
+      "titleKey": "projects.item2.title",
+      "descKey": "projects.item2.desc",
+      "tagsKeys": ["projects.item2.tags"],
+      "link": "pages/projects/project2.html"
+    },
+    {
+      "slug": "robocon-2025",
+      "img": "assets/images/robocon-cover.png",
+      "titleKey": "projects.item3.title",
+      "descKey": "projects.item3.desc",
+      "tagsKeys": ["projects.item3.tags"],
+      "link": "pages/projects/project3.html"
+    },
+    {
+      "slug": "lobster-rov",
+      "img": "assets/images/lobster-cover.png",
+      "titleKey": "projects.item4.title",
+      "descKey": "projects.item4.desc",
+      "tagsKeys": ["projects.item4.tags"],
+      "link": "pages/projects/project4.html"
+    },
+    {
+      "slug": "agri-robot",
+      "img": "assets/images/agri-cover.png",
+      "titleKey": "projects.item5.title",
+      "descKey": "projects.item5.desc",
+      "tagsKeys": ["projects.item5.tags"],
+      "link": "pages/projects/project5.html"
+    }
+  ]
+}

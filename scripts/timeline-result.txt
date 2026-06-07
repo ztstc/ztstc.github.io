@@ -1,0 +1,16 @@
+﻿updated lang/zh.json
+updated lang/en.json
+
+=== After patch ===
+
+lang/zh.json:
+  date:  2024.09
+  title: 加入杭电RAS-IRU机器人实验室
+  desc:  开始着手学习ROS相关知识，并参与实验室的机器人项目开发与维护工作。...
+  link:  {'url': 'https://hdu-raslab.github.io/', 'label': 'Home'}
+
+lang/en.json:
+  date:  2024.09
+  title: Joined HDU RAS-IRU Robotics Lab
+  desc:  Started learning ROS and participating in the lab's robotics...
+  link:  {'url': 'https://hdu-raslab.github.io/', 'label': 'Home'}

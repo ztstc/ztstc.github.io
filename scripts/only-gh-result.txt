@@ -1,0 +1,13 @@
+﻿=== Keep only github button in each project page ===
+  project1.html: kept github (https://github.com/ztstc), removed 2 other link(s)
+  project2.html: kept github (https://github.com/ztstc), removed 2 other link(s)
+  project3.html: kept github (https://github.com/ztstc), removed 2 other link(s)
+  project4.html: kept github (https://github.com/ztstc), removed 2 other link(s)
+  project5.html: kept github (https://github.com/ztstc), removed 2 other link(s)
+
+=== Verify ===
+  project1.html: [{'href': 'https://github.com/ztstc', 'text': 'Code'}]
+  project2.html: [{'href': 'https://github.com/ztstc', 'text': 'HTDW4438-AMP'}]
+  project3.html: [{'href': 'https://github.com/ztstc', 'text': 'Code'}]
+  project4.html: [{'href': 'https://github.com/ztstc', 'text': 'Firmware'}]
+  project5.html: [{'href': 'https://github.com/ztstc', 'text': 'Code'}]

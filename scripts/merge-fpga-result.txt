@@ -1,0 +1,9 @@
+﻿[1] FPGA_Note\FPGA学习笔记.md  ->  notes\study\fpga.md  (30188 bytes)
+[2] FPGA_Note\assets/  ->  notes\study\assets/  (77 files)
+[3] notes-index.json: appended fpga to Study Notes (3 items now)
+
+[4] Image reference check:
+  MISSING 2/8 local image refs:
+    - 
+
+    - 创建新文件New

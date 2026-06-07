@@ -1,0 +1,22 @@
+﻿=== Step 1: Add i18n keys ===
+  lang/zh.json: already has keys
+  lang/en.json: already has keys
+
+=== Step 2: Update project2.html (2 buttons) ===
+  project2.html: 2 buttons added
+
+=== Step 3: Update project4.html (1 button) ===
+  project4.html: 1 button added (specific URL)
+
+=== Step 4: Verify ===
+  project2.html: 2 button(s)
+    href=https://github.com/ztstc/RTOS_Nailong
+    i18n=project2.links.rtosFirmware
+    text=RTOS 固件
+    href=https://github.com/ztstc/nailong_ws
+    i18n=project2.links.rosDriver
+    text=ROS 驱动
+  project4.html: 1 button(s)
+    href=https://github.com/ztstc/ESP32P4-ComputerDashboard
+    i18n=project4.links.github
+    text=Code

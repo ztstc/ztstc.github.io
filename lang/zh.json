@@ -9,43 +9,72 @@
     "documents": "文档"
   },
   "intro": {
-    "avatarAlt": "Lain-Ego的头像",
-    "title": "你好，我是Lain",
-    "desc": "机器人开发爱好者，大三在读，目前于人形机器人公司实习<br>擅长MCU与Linux应用层开发<br>持续钻研运动控制、强化学习及机器人感知技术<br>邮箱：lain-ego@qq.com"
+    "avatarAlt": "ztstc的头像",
+    "title": "你好，我是ztstc",
+    "desc": "机器人开发、嵌入式爱好者，大二在读，目前于杭电RAS-IRU机器人实验室学习<br>擅长物联网和机器人软硬件项目解决方案<br>邮箱：lhctuotuo@126.com"
   },
   "projects": {
     "title": "个人项目",
     "imgAlt": "项目图片",
     "viewDetail": "查看详情",
     "item1": {
-      "title": "LocoWiki 机器人运控资源仓库",
-      "desc": "专为机器人运控学习打造的一站式资源整合仓库，面向ROBOCON备赛、科研学习与开发检索场景。汇总历届赛事规则、高校技术分享、论文学习清单及主流开源项目索引，配套项目网站与飞书知识库。",
-      "tags": ["Wiki", "Knowledge Base", "Robotics", "Open Source"]
+      "title": "RAS-IRU知识库",
+      "desc": "面向机器人入门学习的新手搭建的知识库，包含ROS/ROS2、SLAM导航和机器人软硬件开发等核心资源，持续更新中。",
+      "tags": [
+        "Wiki",
+        "Knowledge Base",
+        "Robotics",
+        "Open Source"
+      ]
     },
     "item2": {
-      "title": "HTDW4438 OpenDog 四足机器人",
-      "desc": "全栈开源四足机器人项目，覆盖机械结构与URDF建模、Isaac Gym强化学习训练到Sim2Real实机部署。以HTDW4438-OpenDog主仓为核心，并与HTDW4438-AMP、HTDW4438_HIMloco、HTDW4438_Isaacgym协同形成完整研发闭环。",
-      "tags": ["Robotics", "Reinforcement Learning", "Sim2Real", "Deployment"]
+      "title": "Nailoong Bot “奶龙机器人”",
+      "desc": "二轮差分底盘机器人项目，包含全栈开发链路：机械设计、底盘驱动板设计、嵌入式软件设计、ROS/ROS2驱动开发、SLAM导航和情感陪伴AI Agent。",
+      "tags": [
+        "RL",
+        "Embedded Systems",
+        "ROS",
+        "STM32",
+        "FreeRTOS"
+      ]
     },
     "item3": {
-      "title": "ROBOCON 2025 足式机器人",
-      "desc": "2025赛季ROBOCON足式机器人全栈研发。负责从类植保无人机碳管装配工艺机械建模、力控制算法到3D雷达建图自主导航技术。带领团队在全国180余支队伍中取得竞速赛第30名、障碍赛第31名、越野赛34名的优异成绩。",
-      "tags": ["Robotics", "Motion Control", "SLAM", "LiDAR", "Mechanical Design"]
+      "title": "FOC_WL 基于ESP32S3的微型2804无刷电机驱动器",
+      "desc": "FOC无刷电机项目，采用ESP32S3+MP6540+MT6701方案，支持Type-c PD供电，支持温度传感，电流传感等，硬件开发完成，驱动调试中。",
+      "tags": [
+        "Robotics",
+        "FOC",
+        "Motor Control",
+        "Embedded Systems",
+        "ESP32"
+      ]
     },
     "item4": {
-      "title": "仿生波士顿大龙虾潜航机器人",
-      "desc": "浮力可控多自由度龙虾水下机器人。负责控制系统开发（步进蠕动泵、电机/舵机驱动、陀螺仪融合、IIC编码器闭环），设计异形多旋翼矢量推进模型实现全向移动。硬件方面负责驱动选型与防水设计。获福建省大学生智能海洋装备大赛特等奖。",
-      "tags": ["Underwater Robotics", "Embedded Systems", "Vector Propulsion", "Waterproof Engineering"]
+      "title": "物联网电脑性能看板 基于微雪ESP32P4 86盒",
+      "desc": "物联网项目，使用ESP32P4驱动4寸LCD触摸屏，通过TCP连接电脑端性能监控程序，实时显示CPU、GPU、内存等性能数据，支持触摸交互切换时间、天气等。",
+      "tags": [
+        "LVGL",
+        "Embedded Systems",
+        "SquareLineStudio",
+        "ESP32",
+        "IOT"
+      ]
     },
     "item5": {
-      "title": "智能插秧收获一体机器人",
-      "desc": "基于FreeRTOS的智能插秧收获农业机器人。通过控制DJI3508电机完成夹爪抬升与全向底盘控制，定位精度±5mm。参与气路设计与硬件布线，支持双机器人协同作业。",
-      "tags": ["Agricultural Robotics", "FreeRTOS", "Motor Control", "Multi-Robot Collaboration"]
-    }
+      "title": "BerryAI 针对草莓的智能种植系统",
+      "desc": "本项目针对草莓种植开发了3代土壤环境传感器、1代微型水肥一体化设备、低帧率大棚相机，硬件均基于ESP32系列开发，开源代码包含硬件项目和后端服务器代码，不含AI Agent部分。",
+      "tags": [
+        "Agricultural Robotics",
+        "Embedded Systems",
+        "ESP32",
+        "IOT"
+      ]
+    },
+    "moreImages": "查看更多图片"
   },
   "project1": {
-    "title": "LocoWiki 机器人运控资源仓库",
-    "desc": "LocoWiki 是专为机器人运控学习打造的一站式资源整合仓库，面向ROBOCON备赛、科研学习与开发检索场景，全链路覆盖足式机器人开发核心资源。<br><br>仓库内容涵盖：<br>1）历届赛事官方规则文档；<br>2）高校参赛队伍技术分享（PPT/PPTX）；<br>3）论文学习清单（阅读清单 + 推荐论文PDF）；<br>4）主流开源项目、核心组件驱动与学习知识库汇总。<br><br>配套项目网站 locowiki.github.io 提供模块导航、常用工具站点与飞书知识库入口，同时维护QQ交流群，方便开发者与参赛队伍交流协作。",
+    "title": "RAS-IRU知识库",
+    "desc": "面向机器人入门学习的新手搭建的知识库，包含ROS/ROS2、SLAM导航和机器人软硬件开发等核心资源，持续更新中。",
     "links": {
       "github": "开源代码",
       "website": "项目网站",
@@ -53,17 +82,19 @@
     }
   },
   "project2": {
-    "title": "HTDW4438 OpenDog 四足机器人",
-    "desc": "HTDW4438 OpenDog 是一个全栈开源四足机器人项目，核心目标是把强化学习步态稳定落地到真实机器人。项目链路覆盖机械结构、URDF建模、仿真训练、策略部署与实机调试。<br><br>仓库结构参考：<br>1）1.Hardware：机器人机械文件、URDF与网格资源；<br>2）2.Software：livelybot_sdk实机通信与控制脚本；<br>3）3.Document / 4.Paper：BOM、手册、参考论文与设计资料。<br><br>训练与控制链路由三仓协同构成：<br>1）HTDW4438-AMP：动作先验与强化学习训练流程；<br>2）HTDW4438_HIMloco：面向稳定行走的策略适配与运动控制优化；<br>3）HTDW4438_Isaacgym：GPU并行仿真训练、策略回放与导出。<br><br>通过上述流程，形成“机械/URDF → 仿真训练 → Sim2Real部署”的完整闭环，支持从策略迭代到实机验证的持续开发。",
+    "title": "Nailoong Bot “奶龙机器人”",
+    "desc": "二轮差分底盘机器人项目，包含全栈开发链路：机械设计、底盘驱动板设计、嵌入式软件设计、ROS/ROS2驱动开发、SLAM导航和情感陪伴AI Agent。",
     "links": {
       "github": "开源代码",
       "techDoc": "技术文档",
-      "demo": "演示视频"
+      "demo": "演示视频",
+      "rtosFirmware": "RTOS 固件",
+      "rosDriver": "ROS 驱动"
     }
   },
   "project3": {
-    "title": "全国大学生机器人大赛ROBOCON足式机器人赛题",
-    "desc": "ROBOCON作为机器人领域的顶尖赛事，对机械可靠性、电控稳定性、视觉准确性提出了较高的要求。<br><br>在2025赛季我基本完整负责了足式机器人一队从机械建模、运动控制到自主导航的全栈研发，采用类植保无人机碳管装配工艺机构+力控制算法+3D雷达建图导航技术，取得2025年ROBOCON（江阴）足式机器人竞速赛全国30名、障碍赛全国31名、越野赛全国34名（全国赛参赛队伍180余支）共三项国二的良好成绩。",
+    "title": "FOC_WL 基于ESP32S3的微型2804无刷电机驱动器",
+    "desc": "FOC无刷电机项目，采用ESP32S3+MP6540+MT6701方案，支持Type-c PD供电，支持温度传感，电流传感等，硬件开发完成，驱动调试中。",
     "links": {
       "github": "开源代码",
       "techDoc": "技术文档",
@@ -71,28 +102,26 @@
     }
   },
   "project4": {
-    "title": "仿生波士顿大龙虾民用潜航机器人",
-    "desc": "本项目为浮力可控的多自由度龙虾水下机器人。<br><br>软件部分负责控制系统开发，设计了一套集成步进蠕动泵、电机/舵机驱动、陀螺仪数据处理以及读取IIC编码器闭环控制360度舵机的下位机框架，同时设计异形多旋翼的矢量推进模型，完善全向移动功能。在硬件设计部分负责了驱动器选型、降压电路以及防水设计等工作。<br><br>作品获2024 年福建省大学生智能海洋装备设计制作大赛水下机器人赛道特等奖，同时进一步代表福建理工大学参展2024世界航海装备大会，获得新华社、光明日报等媒体报道。",
+    "title": "物联网电脑性能看板 基于微雪ESP32P4 86盒",
+    "desc": "物联网项目，使用ESP32P4驱动4寸LCD触摸屏，通过TCP连接电脑端性能监控程序，实时显示CPU、GPU、内存等性能数据，支持触摸交互切换时间、天气等。",
     "links": {
       "firmware": "固件开源",
       "mechanical": "机械开源",
-      "vision": "视觉开源"
-    }
-  },
-  "project5": {
-    "title": "智能插秧收获一体机器人",
-    "desc": "基于FreeRTOS实时操作系统，进行智能插秧与收获一体化农业机器人控制系统编写。<br><br>通过控制DJI3508电机，完成夹爪抬升机构、全向轮底盘、全向定位系统等模块的功能调试，使夹爪动作定位精度控制在±5mm内；同步参与气路系统设计与硬件布线工作，支持与另一台自主运行机器人协同作业，高效完成任务。",
-    "links": {
-      "github": "开源代码",
-      "techDoc": "技术文档",
-      "demo": "演示视频"
+      "vision": "视觉开源",
+      "github": "https://github.com/ztstc"
     }
   },
   "projects1": {
     "imgAlt1": "项目展示图",
     "imgAlt2": "细节展示图 1",
     "imgAlt3": "细节展示图 2",
-    "imgAlt4": "细节展示图 3"
+    "imgAlt4": "细节展示图 3",
+    "imgAlt5": "补充展示图 1",
+    "imgAlt6": "补充展示图 2",
+    "imgAlt7": "补充展示图 3",
+    "imgAlt8": "补充展示图 4",
+    "imgAlt9": "补充展示图 5",
+    "imgAlt10": "补充展示图 6"
   },
   "opensource": {
     "title": "开源贡献",
@@ -101,105 +130,139 @@
     "item1": {
       "title": "BRS-并联四足机器人",
       "desc": "BLACK☆ROCK SHOOTER，全栈完成的并联结构四足机器人项目，完整方案全部开源，参加了2025年ROBOCON全国赛。",
-      "tags": ["Robotics", "Mechanical Design", "Open Source"]
+      "tags": [
+        "Robotics",
+        "Mechanical Design",
+        "Open Source"
+      ]
     },
     "item2": {
       "title": "SliverWolf 桌面级四足机器人",
       "desc": "使用9g小型舵机的直驱位控串联四足，接入IMU控制、语音控制，完成多种步态与机械臂协同取物功能。",
-      "tags": ["STM32", "Voice Control", "IMU", "Robotic Arm"]
+      "tags": [
+        "STM32",
+        "Voice Control",
+        "IMU",
+        "Robotic Arm"
+      ]
     },
     "item3": {
       "title": "仿生龙虾水下机器人",
       "desc": "仿生波士顿大龙虾民用潜航机器人开源项目，包含浮力可控多自由度水下机器人的控制系统、矢量推进模型与硬件设计方案。",
-      "tags": ["Underwater Robotics", "Embedded Systems", "Open Source"]
+      "tags": [
+        "Underwater Robotics",
+        "Embedded Systems",
+        "Open Source"
+      ]
     },
     "item4": {
       "title": "ROBOCON 2024 R1 机器人",
       "desc": "ROBOCON 2024 比赛 R1 机器人的底层控制代码仓库，包含机械方案、全向底盘运动学解算与任务机构逻辑。",
-      "tags": ["Robocon", "STM32", "C", "Chassis Control"]
+      "tags": [
+        "Robocon",
+        "STM32",
+        "C",
+        "Chassis Control"
+      ]
     },
     "item5": {
       "title": "3508足式机器人驱动验证平台",
       "desc": "基于 DJI 3508 无刷减速电机的四足机器人驱动方案，参加2022-2025年多届 ROBOCON 全国赛。",
-      "tags": ["Motor Control", "DJI", "Legged Robot"]
+      "tags": [
+        "Motor Control",
+        "DJI",
+        "Legged Robot"
+      ]
     },
     "item6": {
       "title": "HTDW4438 HIMloco",
       "desc": "HTDW4438 机器人的 HIMloco 运动控制与部署项目，覆盖训练策略迁移与实机验证流程。",
-      "tags": ["RL", "Locomotion", "Sim2Real", "Deployment"]
+      "tags": [
+        "RL",
+        "Locomotion",
+        "Sim2Real",
+        "Deployment"
+      ]
     },
     "item7": {
       "title": "HTDW4438 OpenDog",
       "desc": "HTDW4438 机器人的实物控制与部署代码，包含机械结构设计、控制算法实现与系统集成测试。",
-      "tags": ["Robotics", "Mechanical Design", "C++", "Robotics Hardware"]
+      "tags": [
+        "Robotics",
+        "Mechanical Design",
+        "C++",
+        "Robotics Hardware"
+      ]
     },
     "item8": {
       "title": "ROBOCON2024-PPS",
       "desc": "ROBOCON 2024 PPS 相关机器人项目代码仓库，包含比赛任务逻辑与控制实现。",
-      "tags": ["Robocon", "Robot Control", "Competition"]
+      "tags": [
+        "Robocon",
+        "Robot Control",
+        "Competition"
+      ]
     },
     "item9": {
       "title": "LocoWiki",
       "desc": "轻量化开源 Wiki 与知识管理项目，聚焦结构化笔记组织、快速检索与持续沉淀。",
-      "tags": ["Wiki", "Knowledge Base", "Productivity"]
+      "tags": [
+        "Wiki",
+        "Knowledge Base",
+        "Productivity"
+      ]
     }
   },
   "timeline": {
     "title": "经历时间轴",
-    "event11": {
-      "date": "2026.03 - 至今",
-      "title": "迁星智能实习",
-      "desc": "负责类人形机器人的运动控制与人机交互研发。"
-    },
-    "event10": {
-      "date": "2026.03",
-      "title": "创建 LocoWiki 资料站",
-      "desc": "搭建 LocoWiki 资料站，面向机器人赛事备赛、科研学习与开发检索场景，系统整合赛事规则、技术分享、论文研读清单及优质开源项目等核心资料。"
-    },
     "event1": {
-      "date": "2024.05",
-      "title": "开源 SliverWolf 桌面级四足机器人",
-      "desc": "发布 SliverWolf，一款具备语音控制与机械臂协同作业能力的桌面级串联四足机器人。"
+      "date": "2024.09",
+      "title": "加入杭电RAS-IRU机器人实验室",
+      "desc": "开始着手学习ROS相关知识，并参与实验室的机器人项目开发与维护工作。",
+      "link": {
+        "url": "https://hdu-raslab.github.io/",
+        "label": "RAS"
+      }
     },
     "event2": {
-      "date": "2024.07",
-      "title": "2024 ROBOCON 全国赛",
-      "desc": "基于FreeRTOS完成R1机器人嵌入式控制系统开发，实现±5mm定位精度，球体发射、夹爪夹取功能。"
+      "date": "2025.03",
+      "title": "获得三等奖学金",
+      "desc": " "
     },
     "event3": {
-      "date": "2024.08",
-      "title": "2024 福建省大学生电子设计大赛",
-      "desc": "基于MSPM0G3507开发自动驾驶小车系统，进入省测。"
+      "date": "2025.06-2026.09",
+      "title": "任杭州电子科技大学圣光机学院学生会融媒体新闻采编部副部长",
+      "desc": "组织和参与多次学院活动的拍摄录制，参与公众号推文攥写。"
     },
     "event4": {
-      "date": "2024.11",
-      "title": "福建省大学生智能海洋装备设计制作大赛",
-      "desc": "负责开发浮力可控多自由度龙虾水下机器人的控制系统，获特等奖。"
+      "date": "2025.07",
+      "title": "获得浙江省第十五届“挑战杯”大学生课外学术科技作品竞赛金奖",
+      "desc": "作为“莓开二度”团队成员负责设计开发了针对草莓种植的智能监测系统的物联网传感器、摄像头和水肥一体化设备。"
     },
     "event5": {
-      "date": "2024.12",
-      "title": "2024 世界航海装备大会",
-      "desc": "代表福建理工大学参展，展示仿生波士顿大龙虾机器人，获新华社等媒体报道。"
+      "date": "2025.08",
+      "title": "获得浙江省国际大学生创新大赛（2025）金奖",
+      "desc": "作为“莓开二度”团队成员负责设计开发了针对草莓种植的智能监测系统的物联网传感器、摄像头和水肥一体化设备。"
     },
     "event6": {
-      "date": "2025.07",
-      "title": "2025 ROBOCON 全国赛",
-      "desc": "负责足式机器人全栈研发。获足式机器人竞速赛全国30名、障碍赛31名、越野赛34名，共三项国二佳绩。"
+      "date": "2025.10",
+      "title": "获得二等奖学金",
+      "desc": " "
     },
     "event7": {
-      "date": "2025.08",
-      "title": "2025 全国大学生电子设计大赛",
-      "desc": "负责自动测距系统的功率计硬件设计与制作，获全国二等奖。"
+      "date": "2025.12",
+      "title": "获得杭州电子科技大学第四届Robotics Challenge of HDU-ITMO(建图与导航竞速赛）二等奖",
+      "desc": "作为队长带领成员完成对小车底盘设计、驱动、建图、视觉等模块的开发与集成。"
     },
     "event8": {
-      "date": "2025.09",
-      "title": "开源 BRS 并联四足机器人",
-      "desc": "在GitHub开源BRS并联四足机器人的机械结构与控制代码。"
+      "date": "2026.04",
+      "title": "获得一等奖学金",
+      "desc": " "
     },
     "event9": {
-      "date": "2025.10 - 2026.03",
-      "title": "高擎机电实习",
-      "desc": "负责HTDW4438仿生四足机器人的机械设计、控制算法开发与系统集成测试，分为开源版本与产品化版本。"
+      "date": "2026.05",
+      "title": "获得浙江省第十五届“挑战杯”大学生创业计划竞赛银奖",
+      "desc": "作为“维林科技”团队核心成员参与现场答辩，项目智能林木涂刷检测机器人参与展览并获得认可。"
     }
   },
   "skills": {
@@ -207,16 +270,39 @@
     "embedded": "嵌入式开发",
     "robotics": "机器人技术",
     "software": "开发工具链",
-    "hardware": "结构与硬件设计"
+    "hardware": "结构与硬件设计",
+    "ai": "AI 与智能体"
   },
   "contact": {
     "title": "联系我",
     "bilibili": "哔哩哔哩",
     "github": "代码仓库",
     "twitter": "推特",
-    "zhihu": "知乎"
+    "zhihu": "知乎",
+    "csdn": "CSDN 博客"
   },
   "footer": {
-    "copyright": "© 2023-2026 Lain-Ego | 个人主页"
+    "copyright": "© 2026 ztstc | 个人主页"
+  },
+  "tabs": {
+    "home": "首页",
+    "projects": "项目",
+    "notes": "笔记"
+  },
+  "notes": {
+    "wiki": "笔记",
+    "sidebarTitle": "笔记目录",
+    "welcomeTitle": "欢迎来到笔记 Wiki",
+    "welcomeText": "从左侧选择一篇笔记开始阅读",
+    "loading": "加载中…",
+    "loadError": "加载失败，请检查文件是否存在。",
+    "empty": "还没有笔记，先在 notes/ 目录里写一篇吧~"
+  },
+  "project5": {
+    "title": "BerryAI 针对草莓的智能种植系统",
+    "desc": "本项目针对草莓种植开发了3代土壤环境传感器、1代微型水肥一体化设备、低帧率大棚相机，硬件均基于ESP32系列开发，开源代码包含硬件项目和后端服务器代码，不含AI Agent部分。",
+    "links": {
+      "github": "https://github.com/ztstc"
+    }
   }
 }

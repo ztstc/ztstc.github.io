@@ -1,0 +1,318 @@
+/* =========================================
+   Notes Wiki Layout
+   ========================================= */
+
+.notes-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 32px;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .notes-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px 12px 60px;
+  }
+}
+
+/* === Sidebar ===
+   默认 position:static（移动端不 sticky，避免与 viewer 顺序错乱），
+   仅桌面端 (≥861px) 才启用 sticky。注：必须把 sticky 规则放在默认之后，
+   否则源码顺序会让后面的 sticky 覆盖前面的 static。
+*/
+.notes-sidebar {
+  position: static;
+  top: auto;
+  max-height: none;
+  padding: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (min-width: 861px) {
+  .notes-sidebar {
+    position: sticky;
+    top: 80px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
+}
+
+.notes-sidebar-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  padding: 0 8px;
+}
+
+.notes-group {
+  margin-bottom: 16px;
+}
+
+.notes-group:last-child { margin-bottom: 0; }
+
+.notes-group-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+  list-style: none;
+  border-radius: 6px;
+  user-select: none;
+}
+
+.notes-group-title::-webkit-details-marker { display: none; }
+
+.notes-group-title::before {
+  content: "▸";
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.notes-group[open] > .notes-group-title::before {
+  transform: rotate(90deg);
+}
+
+.notes-group-title:hover {
+  background: var(--bg-hover);
+}
+
+.notes-list {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0 0 0 12px;
+  border-left: 1px solid var(--border-light);
+}
+
+.notes-list-item {
+  display: block;
+  padding: 5px 10px;
+  margin: 2px 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color var(--duration-fast), background-color var(--duration-fast);
+}
+
+.notes-list-item:hover {
+  color: var(--text-main);
+  background: var(--bg-hover);
+}
+
+.notes-list-item.active {
+  color: var(--primary);
+  background: var(--primary-glow);
+  font-weight: 600;
+}
+
+/* === Viewer === */
+.notes-viewer {
+  min-height: 60vh;
+  min-width: 0;  /* 关键：grid item 须 min-width:0 才能被压缩，否则超长内容会撑破整页 */
+  padding: 32px 40px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  line-height: 1.75;
+  overflow: hidden;  /* 兜底：防止子元素负 margin 溢出 */
+}
+
+@media (max-width: 640px) {
+  .notes-viewer {
+    padding: 20px 16px;
+  }
+}
+
+.notes-viewer-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  color: var(--text-muted);
+  text-align: center;
+  gap: 8px;
+}
+
+.notes-viewer-empty-icon { font-size: 2.5rem; opacity: 0.4; }
+.notes-viewer-empty-text { font-size: 0.95rem; }
+
+.notes-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.notes-breadcrumb a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.notes-breadcrumb a:hover { color: var(--primary); }
+
+.notes-breadcrumb .sep { opacity: 0.5; }
+
+.notes-breadcrumb .current { color: var(--text-main); font-weight: 500; }
+
+.notes-loading,
+.notes-error {
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.notes-error { color: #dc2626; }
+
+/* === Markdown 排版（仅作用于 .notes-viewer） === */
+.notes-content {
+  min-width: 0;          /* 同 viewer：防止超长内容撑破布局 */
+  max-width: 100%;
+  overflow-wrap: anywhere; /* 长 URL / 长路径 / 中英混排不溢出 */
+  word-break: break-word;
+}
+
+.notes-content h1,
+.notes-content h2,
+.notes-content h3,
+.notes-content h4 {
+  margin: 1.6em 0 0.6em;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-main);
+  overflow-wrap: anywhere;  /* 标题里有长串也不溢出 */
+}
+
+.notes-content h1 {
+  font-size: 1.9rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border-light);
+}
+.notes-content h2 {
+  font-size: 1.5rem;
+  /* h2 不再画底边线，避免与 h1 视觉上"同层级"造成混乱 */
+  padding-bottom: 0.15em;
+  border-left: 3px solid var(--primary);
+  padding-left: 0.5em;
+}
+.notes-content h3 { font-size: 1.2rem; color: var(--text-main); }
+.notes-content h4 { font-size: 1.05rem; color: var(--text-muted); font-weight: 600; }
+.notes-content h1:first-child, .notes-content h2:first-child { margin-top: 0; }
+
+.notes-content p { margin: 0.8em 0; }
+
+.notes-content a {
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--primary);
+}
+.notes-content a:hover { border-bottom-style: solid; }
+
+.notes-content ul, .notes-content ol {
+  margin: 0.8em 0;
+  padding-left: 1.6em;
+}
+.notes-content li { margin: 0.25em 0; }
+
+.notes-content code {
+  padding: 0.15em 0.4em;
+  font-family: var(--font-code);
+  font-size: 0.88em;
+  background: var(--bg-hover);
+  border-radius: 4px;
+  color: #e11d48;
+}
+[data-theme="dark"] .notes-content code { color: #f472b6; }
+
+.notes-content pre {
+  margin: 1em 0;
+  padding: 14px 16px;
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+[data-theme="dark"] .notes-content pre {
+  background: #0a0a0b;
+  border: 1px solid var(--border-light);
+}
+.notes-content pre code {
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font-size: inherit;
+  border-radius: 0;
+}
+
+.notes-content blockquote {
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  color: var(--text-muted);
+  border-left: 3px solid var(--primary);
+  background: var(--bg-hover);
+  border-radius: 0 6px 6px 0;
+}
+
+.notes-content hr {
+  margin: 1.5em 0;
+  border: 0;
+  border-top: 1px solid var(--border-light);
+}
+
+.notes-content table {
+  width: 100%;
+  margin: 1em 0;
+  border-collapse: collapse;
+  font-size: 0.9em;
+  table-layout: fixed;       /* 关键：固定布局，否则长字符串会撑破列宽 */
+  display: block;            /* 表格 + overflow-x 让小屏可横滚 */
+  overflow-x: auto;
+}
+.notes-content th, .notes-content td {
+  padding: 8px 12px;
+  border: 1px solid var(--border-light);
+  text-align: left;
+  overflow-wrap: anywhere;   /* 表格内长串也允许折行 */
+  word-break: break-word;
+}
+.notes-content th { background: var(--bg-hover); font-weight: 600; }
+
+.notes-content img {
+  max-width: 100% !important; /* 覆盖 fpga.md 里的内联 style="zoom:33%" */
+  height: auto;
+  border-radius: 6px;
+  display: block;
+  margin: 0.4em auto;
+}
+
+.notes-content pre {
+  max-width: 100%;
+  white-space: pre-wrap;     /* 长代码 / 链接在小屏可折行 */
+  word-break: break-word;
+}
+.notes-content pre code { white-space: pre-wrap; }

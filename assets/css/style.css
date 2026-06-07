@@ -2,59 +2,168 @@
    1. Design Token & Themes
    ========================================= */
 :root {
-  /* 基础参数 */
-  --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* === 基础参数 === */
   --radius-md: 16px;
   --radius-full: 999px;
   --container-width: 1024px;
   --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-color: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-emphasis: cubic-bezier(0.16, 1, 0.3, 1);
   --duration-fast: 180ms;
   --duration-base: 480ms;
-  
-  /* [Light Mode] 默认日间模式变量 */
+
+  /* === 默认字体（面板专属样式会覆盖） === */
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  --font-display: var(--font-body);
+  --font-code: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+  --font-main: var(--font-body);  /* 兼容旧变量 */
+
+  /* === 默认主题色（Projects tab · 蓝色玻璃） === */
   --bg-body: #f8fafc;
   --bg-card: #ffffff;
   --bg-glass: rgba(255, 255, 255, 0.8);
   --bg-hover: #f1f5f9;
-  
+
   --text-main: #0f172a;
   --text-muted: #64748b;
   --text-invert: #ffffff;
-  
-  --primary: #2563eb;       /* 核心蓝 */
+
+  --primary: #2563eb;
   --primary-glow: rgba(37, 99, 235, 0.2);
-  
+
   --border-light: rgba(0, 0, 0, 0.06);
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  
+
   --gradient-title: linear-gradient(135deg, #0f172a 0%, #3b82f6 100%);
   --decoration-blob: #e2e8f0;
 }
 
-/* [Dark Mode] 深色模式变量覆盖 */
+/* =========================================
+   🏠 Home tab · 风格 C（日系极简 / 暖白 + 衬线 + 朱红）
+   ========================================= */
+body[data-active-panel="home"] {
+  --bg-body: #faf7f2;          /* 暖白纸张 */
+  --bg-card: #fffcf7;
+  --bg-glass: rgba(250, 247, 242, 0.85);
+  --bg-hover: #f0ebe2;
+
+  --text-main: #2b2724;         /* 墨色 */
+  --text-muted: #7a736c;
+  --text-invert: #fffcf7;
+
+  --primary: #8b3a3a;           /* 朱红 */
+  --primary-glow: rgba(139, 58, 58, 0.18);
+
+  --border-light: rgba(43, 39, 36, 0.12);
+  --shadow-sm: 0 1px 0 rgba(43, 39, 36, 0.04);
+  --shadow-card: 0 1px 3px rgba(43, 39, 36, 0.06);
+  --shadow-hover: 0 2px 8px rgba(43, 39, 36, 0.10);
+
+  --gradient-title: linear-gradient(135deg, #2b2724 0%, #8b3a3a 100%);
+  --decoration-blob: #e8e0d2;
+  --radius-md: 4px;             /* 日系偏方正 */
+
+  --font-body: "LXGW WenKai Screen", "Noto Serif SC", "Source Han Serif SC", "Songti SC", "PingFang SC", "Microsoft YaHei", serif;
+  --font-display: "LXGW WenKai Screen", "Noto Serif SC", "Source Han Serif SC", "Songti SC", "PingFang SC", "Microsoft YaHei", serif;
+}
+
+/* =========================================
+   📚 Notes tab · 风格 A（Notion/Linear · 极简 + 1px 细线）
+   ========================================= */
+body[data-active-panel="notes"] {
+  --bg-body: #ffffff;
+  --bg-card: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --bg-hover: #f5f5f5;
+
+  --text-main: #1f1f1f;
+  --text-muted: #6b7280;
+  --text-invert: #ffffff;
+
+  --primary: #2563eb;
+  --primary-glow: rgba(37, 99, 235, 0.10);
+
+  --border-light: rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 1px 4px rgba(0, 0, 0, 0.06);
+
+  --gradient-title: linear-gradient(135deg, #1f1f1f 0%, #2563eb 100%);
+  --decoration-blob: #f5f5f5;
+  --radius-md: 8px;
+
+  --font-body: -apple-system, BlinkMacSystemFont, "Inter", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "Inter", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* =========================================
+   Dark Mode（Projects 默认深色）
+   ========================================= */
 [data-theme="dark"] {
-  --bg-body: #1b1b1d;       /* 纯净中性暗背景 */
-  --bg-card: #242526;       /* 轻微抬升层级 */
+  --bg-body: #1b1b1d;
+  --bg-card: #242526;
   --bg-glass: rgba(27, 27, 29, 0.82);
   --bg-hover: #2d2f31;
-  
+
   --text-main: #e8e9ea;
   --text-muted: #b0b3b8;
-  
+
   --primary: #78a8f8;
   --primary-glow: rgba(120, 168, 248, 0.24);
-  
+
   --border-light: rgba(227, 227, 227, 0.14);
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.32);
   --shadow-card: 0 8px 20px rgba(0, 0, 0, 0.22);
   --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.30);
-  
+
   --gradient-title: linear-gradient(135deg, #f1f2f4 0%, #9abcf2 100%);
   --decoration-blob: #2a2c2e;
+}
+
+/* 🏠 Home · Dark */
+[data-theme="dark"] body[data-active-panel="home"] {
+  --bg-body: #1c1a17;          /* 墨色夜纸 */
+  --bg-card: #25221e;
+  --bg-glass: rgba(28, 26, 23, 0.85);
+  --bg-hover: #2f2b25;
+
+  --text-main: #e8e2d6;         /* 暖白字 */
+  --text-muted: #998f80;
+  --text-invert: #1c1a17;
+
+  --primary: #c87171;           /* 浅朱 */
+  --primary-glow: rgba(200, 113, 113, 0.22);
+
+  --border-light: rgba(232, 226, 214, 0.12);
+  --shadow-sm: 0 1px 0 rgba(0, 0, 0, 0.2);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+  --gradient-title: linear-gradient(135deg, #e8e2d6 0%, #c87171 100%);
+  --decoration-blob: #2f2b25;
+}
+
+/* 📚 Notes · Dark */
+[data-theme="dark"] body[data-active-panel="notes"] {
+  --bg-body: #0d0d0d;
+  --bg-card: #161616;
+  --bg-glass: rgba(13, 13, 13, 0.85);
+  --bg-hover: #1f1f1f;
+
+  --text-main: #ededed;
+  --text-muted: #8a8a8a;
+
+  --primary: #6b9aff;
+  --primary-glow: rgba(107, 154, 255, 0.18);
+
+  --border-light: rgba(255, 255, 255, 0.08);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4);
+
+  --gradient-title: linear-gradient(135deg, #ededed 0%, #6b9aff 100%);
+  --decoration-blob: #1f1f1f;
 }
 
 /* =========================================
@@ -69,14 +178,64 @@ html {
 }
 
 body {
-  font-family: var(--font-main);
+  font-family: var(--font-body);
   background-color: var(--bg-body);
   color: var(--text-main);
   line-height: 1.6;
-  /* 关键：平滑过渡背景色和文字颜色 */
-  transition: background-color 0.4s ease, color 0.4s ease;
+  /* 关键：切换 tab 时所有派生样式平滑过渡 */
+  transition:
+    background-color var(--transition-color),
+    color var(--transition-color),
+    font-family 0.01s;  /* 字体本身无法渐变，加最小延时避免加载闪烁 */
   max-width: 100%;
   overflow-x: hidden;
+}
+
+/* 让常用容器、按钮、卡片都跟随主题色平滑过渡 */
+body, .tab-btn, .tab-bar, .tab-bar-inner,
+.card, .os-card, .skill-badge, .intro-contact-link,
+.os-tag, .project-tag, .control-btn, .logo,
+.notes-sidebar, .notes-viewer, .notes-list-item,
+.notes-group-title, .opensource-grid,
+.projects-grid, .skills-wrapper, .timeline-container,
+.notes-content h1, .notes-content h2, .notes-content h3,
+.notes-content code, .notes-content pre,
+.notes-content blockquote, .notes-content table,
+.notes-content th, .notes-content td {
+  transition:
+    background-color var(--transition-color),
+    color var(--transition-color),
+    border-color var(--transition-color),
+    box-shadow var(--transition-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+/* =========================================
+   View Transitions API：tab 切换的整页淡入淡出
+   ========================================= */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.45s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  ::view-transition-old(root) {
+    animation-name: vt-fade-out;
+  }
+  ::view-transition-new(root) {
+    animation-name: vt-fade-in;
+  }
+  @keyframes vt-fade-out {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
+  @keyframes vt-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
 }
 
 @supports (overflow: clip) {
@@ -323,6 +482,28 @@ nav {
   color: var(--primary);
   border-color: var(--primary);
   transform: translateY(-1px);
+}
+
+/* 文字型 contact 链接：默认与图标风格一致（灰色），hover 时显示 CSDN 红色 */
+.intro-contact-link:has(.contact-text) {
+  width: auto;
+  padding: 0 12px;
+  border-radius: 21px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+.intro-contact-link:has(.contact-text):hover {
+  background: #c00;
+  color: #ffffff;
+  border-color: #c00;
+}
+
+[data-theme="dark"] .intro-contact-link:has(.contact-text):hover {
+  background: #ff5252;
+  color: #ffffff;
+  border-color: #ff5252;
 }
 
 /* =========================================
@@ -677,6 +858,33 @@ footer {
 .timeline-content p {
   font-size: 0.95rem;
   color: var(--text-muted);
+}
+
+.timeline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 10px;
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--primary);
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.timeline-link:hover {
+  color: var(--text-invert);
+  background: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.timeline-link i {
+  font-size: 0.75rem;
 }
 
 /* =========================================

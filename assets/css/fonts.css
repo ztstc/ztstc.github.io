@@ -1,0 +1,13 @@
+/* =========================================
+   Font Loading
+   - LXGW WenKai Screen (霞鹜文楷) for Style C headings/body
+   - JetBrains Mono for code blocks
+   - All via fast CDNs (BootCDN / jsDelivr) with font-display: swap
+   ========================================= */
+
+/* 霞鹜文楷（屏幕版） - 主字体 */
+@import url('https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.css');
+
+/* JetBrains Mono - 代码字体 */
+@import url('https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.0.20/400.css');
+@import url('https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.0.20/700.css');

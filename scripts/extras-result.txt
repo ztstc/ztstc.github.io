@@ -1,0 +1,21 @@
+﻿=== STEP 1: Title and nav 'Lain-Ego' -> 'ztstc' ===
+  project1.html: replaced
+  project2.html: replaced
+  project3.html: replaced
+  project4.html: replaced
+  project5.html: replaced
+
+=== STEP 2: Add collapsible to project2 (8 imgs) and project5 (4 imgs) ===
+  project2.html: 2 main + 6 in collapsible
+  project5.html: 2 main + 2 in collapsible
+
+=== STEP 3: Add new i18n keys ===
+  updated lang/zh.json
+  updated lang/en.json
+
+=== Verify ===
+  project1.html: Lain-Ego=False ztstc=True imgs=1 extras-grid=0
+  project2.html: Lain-Ego=False ztstc=True imgs=8 extras-grid=1
+  project3.html: Lain-Ego=False ztstc=True imgs=3 extras-grid=0
+  project4.html: Lain-Ego=False ztstc=True imgs=3 extras-grid=0
+  project5.html: Lain-Ego=False ztstc=True imgs=4 extras-grid=1

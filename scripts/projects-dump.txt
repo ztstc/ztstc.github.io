@@ -1,0 +1,26 @@
+﻿
+=== lang/zh.json ===
+  item1: YES (RAS-IRU知识库)
+  project1: YES (RAS-IRU知识库)
+  item2: YES (Nailoong Bot “奶龙机器人”)
+  project2: YES (Nailoong Bot “奶龙机器人”)
+  item3: YES (FOC_WL 基于ESP32S3的微型2804无刷电机驱动器)
+  project3: YES (全国大学生机器人大赛ROBOCON足式机器人赛题)
+  item4: YES (物联网电脑性能看板 基于微雪ESP32P4 86盒)
+  project4: YES (仿生波士顿大龙虾民用潜航机器人)
+  item5: YES (BerryAI 针对草莓的智能种植系统)
+  project5: NO (-)
+  projects1: YES
+
+=== lang/en.json ===
+  item1: YES (LocoWiki Robot Locomotion Repository)
+  project1: YES (LocoWiki Robot Locomotion Repository)
+  item2: YES (HTDW4438 OpenDog Quadruped)
+  project2: YES (HTDW4438 OpenDog Quadruped)
+  item3: YES (ROBOCON 2025 Quadruped Robot)
+  project3: YES (ROBOCON 2025 Quadruped Robot Challenge)
+  item4: YES (Bionic Boston Lobster Submersible)
+  project4: YES (Bionic Boston Lobster Submersible)
+  item5: YES (Intelligent Agriculture Robot)
+  project5: YES (Intelligent Planting and Harvesting Robot)
+  projects1: YES

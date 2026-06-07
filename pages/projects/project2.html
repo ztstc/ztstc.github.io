@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project 02 - Lain-Ego</title>
+  <title>Project 02 - ztstc</title>
   
   <script>
     const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -11,13 +11,13 @@
   </script>
 
   <link rel="stylesheet" href="../../assets/css/style.css">
-  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
   <nav>
     <div class="container nav-container">
       <a href="../../index.html" class="logo">
-        <span class="logo-text">Lain-Ego</span>
+        <span class="logo-text">ztstc</span>
         <div class="logo-dot"></div>
       </a>
       <div class="nav-actions">
@@ -41,34 +41,31 @@
       <div class="card project-detail-card">
         <h2 data-i18n="project2.title"></h2>
         
-        <img src="../../assets/images/opendog-cover.png" data-i18n="projects1.imgAlt1" class="project-img">
-        
-        <div class="project-detail-desc">
-           <p data-i18n="project2.desc"></p>
-        </div>
-
-        <img src="../../assets/images/opendog-detail-1.png" data-i18n="projects1.imgAlt2" class="project-img">
-        <img src="../../assets/images/opendog-detail-2.png" data-i18n="projects1.imgAlt3" class="project-img">
-     
-        <div class="publish-links-wrapper">
-          <div class="publish-links">
-            <a href="https://github.com/Lain-Ego0/HTDW4438-AMP" target="_blank" class="publish-link github">
-              <i class="fab fa-github"></i> <span>HTDW4438-AMP</span>
+        <img src="../../assets/images/奶龙-封面.jpg" data-i18n="projects1.imgAlt1" class="project-img">
+<img src="../../assets/images/奶龙底盘.jpg" data-i18n="projects1.imgAlt2" class="project-img">
+<details class="project-extras">
+  <summary><span data-i18n="projects.moreImages">查看更多图片</span> (6)</summary>
+  <div class="project-extras-grid">
+        <img src="../../assets/images/奶龙-侧视图.jpg" data-i18n="projects1.imgAlt3" class="project-img">
+        <img src="../../assets/images/奶龙-底盘控制器.png" data-i18n="projects1.imgAlt5" class="project-img">
+        <img src="../../assets/images/奶龙-底盘雷达摄像头.jpg" data-i18n="projects1.imgAlt6" class="project-img">
+        <img src="../../assets/images/奶龙-眼部特写.jpg" data-i18n="projects1.imgAlt7" class="project-img">
+        <img src="../../assets/images/奶龙-尾部.jpg" data-i18n="projects1.imgAlt8" class="project-img">
+        <img src="../../assets/images/奶龙底盘导航照片.jpg" data-i18n="projects1.imgAlt9" class="project-img">
+  </div>
+</details>
+<div class="publish-links-wrapper"><div class="publish-links">
+            <a href="https://github.com/ztstc/RTOS_Nailong" target="_blank" rel="noopener noreferrer" class="publish-link github">
+              <i class="fab fa-github"></i> <span data-i18n="project2.links.rtosFirmware">RTOS 固件</span>
             </a>
-            <a href="https://github.com/Lain-Ego0/HTDW4438_HIMloco" target="_blank" class="publish-link">
-              <i class="fab fa-github"></i> <span>HTDW4438_HIMloco</span>
+            <a href="https://github.com/ztstc/nailong_ws" target="_blank" rel="noopener noreferrer" class="publish-link github">
+              <i class="fab fa-github"></i> <span data-i18n="project2.links.rosDriver">ROS 驱动</span>
             </a>
-            <a href="https://github.com/Lain-Ego0/HTDW4438_Isaacgym" target="_blank" class="publish-link">
-              <i class="fab fa-github"></i> <span>HTDW4438_Isaacgym</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
+          </div></div>
     </div>
   </section>
 
-  <footer data-i18n="footer.copyright">漏 2026 Lain-Ego. All rights reserved.</footer>
+  <footer data-i18n="footer.copyright">漏 2026 ztstc. All rights reserved.</footer>
 
   <script src="../../assets/js/i18n.js"></script>
   <script src="../../assets/js/main.js"></script>

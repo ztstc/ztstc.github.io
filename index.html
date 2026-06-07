@@ -3,32 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lain-Ego's Homepage</title>
-  
+  <title>ztstc's Wiki</title>
+
   <script>
     const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     document.documentElement.setAttribute('data-theme', savedTheme);
   </script>
 
+  <link rel="stylesheet" href="assets/css/fonts.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/tabs.css">
+  <link rel="stylesheet" href="assets/css/notes.css">
+  <link rel="stylesheet" href="assets/css/extras.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
   <nav>
     <div class="container nav-container">
       <a href="#" class="logo">
-        <span class="logo-text">Lain-Ego</span>
+        <span class="logo-text">ztstc</span>
         <div class="logo-dot"></div>
       </a>
-      
+
       <div class="nav-actions">
-        <div class="nav-links">
-          <a href="#projects" data-i18n="nav.projects">Projects</a>
-          <a href="#opensource" data-i18n="nav.opensource">Open Source</a>
-          <a href="#timeline" data-i18n="nav.timeline">Timeline</a>
-          <a href="#skills" data-i18n="nav.skills">Stack</a>
-        </div>
-        
         <div class="nav-controls">
           <button class="control-btn lang-toggle" aria-label="Toggle Language">中文</button>
           <button class="control-btn theme-toggle" aria-label="Toggle Theme">
@@ -40,50 +37,93 @@
     </div>
   </nav>
 
-  <section id="intro" class="intro">
-    <div class="bg-decoration"></div>
-    <div class="container flex-center column">
-      <div class="avatar-container">
-        <img src="assets/images/Avatar.jpg" alt="Avatar" class="avatar" data-i18n="intro.avatarAlt">
-        <div class="avatar-glow"></div>
+  <!-- Tab 栏 -->
+  <div class="tab-bar" role="tablist" aria-label="主导航">
+    <div class="tab-bar-inner">
+      <button class="tab-btn active" data-tab="home" role="tab" aria-selected="true" type="button">
+        <!-- <span class="tab-icon">🏠</span> -->
+        <span class="tab-label" data-i18n="tabs.home">首页</span>
+      </button>
+      <button class="tab-btn" data-tab="projects" role="tab" aria-selected="false" type="button">
+        <!-- <span class="tab-icon">🚀</span> -->
+        <span class="tab-label" data-i18n="tabs.projects">项目</span>
+      </button>
+      <button class="tab-btn" data-tab="notes" role="tab" aria-selected="false" type="button">
+        <!-- <span class="tab-icon">📚</span> -->
+        <span class="tab-label" data-i18n="tabs.notes">笔记</span>
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <!-- Tab 1: Home -->
+    <div class="tab-panel active" data-panel="home" role="tabpanel">
+      <section id="intro" class="intro">
+        <div class="bg-decoration"></div>
+        <div class="container flex-center column">
+          <div class="avatar-container">
+            <img src="assets/images/Avatar.jpg" alt="Avatar" class="avatar" data-i18n="intro.avatarAlt">
+            <div class="avatar-glow"></div>
+          </div>
+          <h1 class="gradient-text" data-i18n="intro.title">Hello, I'm ztstc</h1>
+          <p class="subtitle" data-i18n="intro.desc">...</p>
+          <div class="intro-contact-links" aria-label="Social Links"></div>
+        </div>
+      </section>
+
+      <section id="opensource" class="section-padding">
+        <div class="container">
+          <h2 data-i18n="opensource.title">Open Source Contributions</h2>
+          <div class="opensource-grid"></div>
+        </div>
+      </section>
+
+      <section id="timeline" class="section-padding">
+        <div class="container">
+          <h2 data-i18n="timeline.title">Timeline</h2>
+          <div class="timeline-container"></div>
+        </div>
+      </section>
+
+      <section id="skills" class="section-padding">
+        <div class="container">
+          <h2 data-i18n="skills.title">Tech Stack</h2>
+          <div class="skills-wrapper"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Tab 2: Projects -->
+    <div class="tab-panel" data-panel="projects" role="tabpanel">
+      <section class="section-padding">
+        <div class="container">
+          <h2 data-i18n="projects.title">My Projects</h2>
+          <div class="projects-grid"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Tab 3: Notes Wiki -->
+    <div class="tab-panel" data-panel="notes" role="tabpanel">
+      <div class="notes-layout">
+        <aside class="notes-sidebar" aria-label="Notes sidebar"></aside>
+        <article class="notes-viewer" aria-label="Notes viewer">
+          <div class="notes-viewer-empty">
+            <div class="notes-viewer-empty-icon">📚</div>
+            <div class="notes-viewer-empty-text" style="font-size:1.1rem;font-weight:600;color:var(--text-main);" data-i18n="notes.welcomeTitle">欢迎来到笔记 Wiki</div>
+            <div class="notes-viewer-empty-text" data-i18n="notes.welcomeText">从左侧选择一篇笔记开始阅读</div>
+          </div>
+        </article>
       </div>
-      <h1 class="gradient-text" data-i18n="intro.title">Hello, I'm Lain-Ego</h1>
-      <p class="subtitle" data-i18n="intro.desc">...</p>
-      <div class="intro-contact-links" aria-label="Social Links"></div>
     </div>
-  </section>
+  </main>
 
-  <section id="projects" class="section-padding">
-    <div class="container">
-      <h2 data-i18n="projects.title">My Projects</h2>
-      <div class="projects-grid"></div>
-    </div>
-  </section>
+  <footer data-i18n="footer.copyright">© 2026 ztstc. All rights reserved.</footer>
 
-  <section id="opensource" class="section-padding">
-    <div class="container">
-      <h2 data-i18n="opensource.title">Open Source Contributions</h2>
-      <div class="opensource-grid"></div>
-    </div>
-  </section>
-
-  <section id="timeline" class="section-padding">
-    <div class="container">
-      <h2 data-i18n="timeline.title">Timeline</h2>
-      <div class="timeline-container"></div>
-    </div>
-  </section>
-
-  <section id="skills" class="section-padding">
-    <div class="container">
-      <h2 data-i18n="skills.title">Tech Stack</h2>
-      <div class="skills-wrapper"></div>
-    </div>
-  </section>
-
-  <footer data-i18n="footer.copyright">© 2026 Lain-Ego. All rights reserved.</footer>
-
+  <script src="assets/vendor/marked.min.js" defer></script>
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/notes.js"></script>
 </body>
 </html>

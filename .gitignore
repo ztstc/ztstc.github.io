@@ -1,0 +1,39 @@
+# ===== 操作系统 =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== 编辑器 / IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== Python 缓存（merge-fpga-notes / merge-external-notes / fetch-note-assets）=====
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ===== Node 缓存 =====
+node_modules/
+.npm/
+*.tsbuildinfo
+
+# ===== 临时 / 测试 / 缓存文件 =====
+.tmp-*
+.tmp-utf8-test.json
+.codex/
+.cache/
+
+# ===== 合并前的源备份（已合并到 notes/，是冗余源）=====
+FPGA_Note/
+
+# ===== 字体 awesome 缓存（脚本会重新生成）=====
+assets/fa-css-cache.min.css
+
+# ===== 日志 =====
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

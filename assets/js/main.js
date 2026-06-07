@@ -19,11 +19,19 @@
     WIKI: 'Wiki',
     KNOWLEDGE_BASE: 'Knowledge Base',
     OPEN_SOURCE: 'Open Source',
+    FOC: 'FOC',
+    ESP32: 'ESP32',
+    STM32: 'STM32',
+    LVGL: 'LVGL',
+    IOT: 'IoT',
+    SQUARELINE: 'SquareLine',
+    AI_AGENT: 'AI Agent',
+    ROS: 'ROS',
   };
 
   const PROJECTS = [
     {
-      img: 'assets/images/locowiki-cover.png',
+      img: 'assets/images/IRU-wiki-cover.jpg',
       titleKey: 'projects.item1.title',
       descKey: 'projects.item1.desc',
       tags: [
@@ -35,66 +43,65 @@
       link: 'pages/projects/project1.html',
     },
     {
-      img: 'assets/images/opendog-cover.png',
+      img: 'assets/images/奶龙-封面.jpg',
       titleKey: 'projects.item2.title',
       descKey: 'projects.item2.desc',
       tags: [
         PROJECT_TAG_LIBRARY.ROBOTICS,
-        PROJECT_TAG_LIBRARY.REINFORCEMENT_LEARNING,
-        PROJECT_TAG_LIBRARY.SIM2REAL,
-        PROJECT_TAG_LIBRARY.DEPLOYMENT,
+        PROJECT_TAG_LIBRARY.AI_AGENT,
+        PROJECT_TAG_LIBRARY.ROS,
+        PROJECT_TAG_LIBRARY.STM32,
+        PROJECT_TAG_LIBRARY.FREERTOS,
       ],
       link: 'pages/projects/project2.html',
     },
     {
-      img: 'assets/images/robocon-cover.png',
+      img: 'assets/images/FOC_驱动板-封面.jpg',
       titleKey: 'projects.item3.title',
       descKey: 'projects.item3.desc',
       tags: [
-        PROJECT_TAG_LIBRARY.ROBOTICS,
-        PROJECT_TAG_LIBRARY.MOTION_CONTROL,
-        PROJECT_TAG_LIBRARY.SLAM,
-        PROJECT_TAG_LIBRARY.LIDAR,
-        PROJECT_TAG_LIBRARY.MECHANICAL_DESIGN,
+        PROJECT_TAG_LIBRARY.MOTOR_CONTROL,
+        PROJECT_TAG_LIBRARY.FOC,
+        PROJECT_TAG_LIBRARY.ESP32,
+        PROJECT_TAG_LIBRARY.EMBEDDED,
       ],
       link: 'pages/projects/project3.html',
     },
     {
-      img: 'assets/images/lobster-cover.png',
+      img: 'assets/images/电脑性能看板-封面.jpg',
       titleKey: 'projects.item4.title',
       descKey: 'projects.item4.desc',
       tags: [
-        PROJECT_TAG_LIBRARY.UNDERWATER_ROBOTICS,
+        PROJECT_TAG_LIBRARY.LVGL,
+        PROJECT_TAG_LIBRARY.SQUARELINE,
+        PROJECT_TAG_LIBRARY.ESP32,
+        PROJECT_TAG_LIBRARY.IOT,
         PROJECT_TAG_LIBRARY.EMBEDDED,
-        PROJECT_TAG_LIBRARY.VECTOR_PROPULSION,
-        PROJECT_TAG_LIBRARY.WATERPROOF_ENGINEERING,
       ],
       link: 'pages/projects/project4.html',
     },
     {
-      img: 'assets/images/agri-cover.png',
+      img: 'assets/images/BerryAI-封面.jpg',
       titleKey: 'projects.item5.title',
       descKey: 'projects.item5.desc',
       tags: [
+        PROJECT_TAG_LIBRARY.IOT,
+        PROJECT_TAG_LIBRARY.ESP32,
         PROJECT_TAG_LIBRARY.AGRICULTURAL_ROBOTICS,
-        PROJECT_TAG_LIBRARY.FREERTOS,
-        PROJECT_TAG_LIBRARY.MOTOR_CONTROL,
-        PROJECT_TAG_LIBRARY.MULTI_ROBOT_COLLABORATION,
+        PROJECT_TAG_LIBRARY.EMBEDDED,
       ],
       link: 'pages/projects/project5.html',
     },
   ];
 
+  // 复用 projects 数据：key 直接指向 projects.itemN，自动读取 title/desc/tags
+  // linkCode 暂时统一用 GitHub profile（用户后续可替换成具体 repo URL）
   const OPEN_SOURCE_ITEMS = [
-    { key: 'opensource.item9', linkCode: 'https://github.com/Lain-Ego0/LocoWiki', linkDoc: null },
-    { key: 'opensource.item1', linkCode: 'https://github.com/Lain-Ego0/BRS-Parallel-Robot', linkDoc: null },
-    { key: 'opensource.item2', linkCode: 'https://github.com/Lain-Ego0/SliverWolf-ArmRobotDog', linkDoc: null },
-    { key: 'opensource.item3', linkCode: 'https://github.com/Lain-Ego0/BionicLobster-ROV', linkDoc: null },
-    { key: 'opensource.item4', linkCode: 'https://github.com/Lain-Ego0/ROBOCON2024-R1', linkDoc: null },
-    { key: 'opensource.item5', linkCode: 'https://github.com/Lain-Ego0/ROBOCON2024-3508DOG', linkDoc: null },
-    { key: 'opensource.item6', linkCode: 'https://github.com/Lain-Ego0/HTDW4438_HIMloco', linkDoc: null },
-    { key: 'opensource.item7', linkCode: 'https://github.com/Lain-Ego0/HTDW4438-OpenDog', linkDoc: null },
-    { key: 'opensource.item8', linkCode: 'https://github.com/Lain-Ego0/ROBOCON2024-PPS', linkDoc: null },
+    { key: 'projects.item1', linkCode: 'https://github.com/ztstc', linkDoc: null },
+    { key: 'projects.item2', linkCode: 'https://github.com/ztstc', linkDoc: null },
+    { key: 'projects.item3', linkCode: 'https://github.com/ztstc', linkDoc: null },
+    { key: 'projects.item4', linkCode: 'https://github.com/ztstc', linkDoc: null },
+    { key: 'projects.item5', linkCode: 'https://github.com/ztstc', linkDoc: null },
   ];
 
   const TIMELINE_EVENTS = [
@@ -115,32 +122,35 @@
     {
       category: 'skills.hardware',
       items: [
-        { name: 'Fusion 360', icon: 'fas fa-cube' },
+        { name: '3D打印', icon: 'fas fa-cube' },
         { name: 'SolidWorks', icon: 'fas fa-drafting-compass' },
-        { name: 'LCEDA', icon: 'fas fa-pencil-ruler' },
+        { name: '嘉立创EDA', icon: 'fas fa-pencil-ruler' },
         { name: 'KiCad', icon: 'fas fa-layer-group' },
+        { name: '精密焊接', icon: 'fas fa-layer-group' }
       ],
     },
     {
       category: 'skills.embedded',
       items: [
-        { name: 'MCU', icon: 'fas fa-microchip' },
-        { name: 'SBC', icon: 'fas fa-server' },
+        { name: 'STM32', icon: 'fas fa-microchip' },
+        { name: 'ESP32', icon: 'fas fa-microchip' },
+        { name: 'FPGA', icon: 'fas fa-microchip' },
+        { name: 'MQTT', icon: 'fas fa-server' },
         { name: 'RTOS', icon: 'fas fa-cogs' },
         { name: 'Keil MDK', icon: 'fas fa-screwdriver-wrench' },
         { name: 'STM32CubeMX', icon: 'fas fa-cubes' },
         { name: 'C/C++', icon: 'fas fa-code' },
-        { name: 'Rust', icon: 'fab fa-rust' },
+        { name: 'Micro-Python', icon: 'fab fa-python' },
       ],
     },
     {
       category: 'skills.robotics',
       items: [
         { name: 'ROS/ROS2', icon: 'fas fa-robot' },
-        { name: 'MuJoCo', icon: 'fas fa-cube' },
-        { name: 'Isaac Gym', icon: 'fas fa-dumbbell' },
-        { name: 'Isaac Sim', icon: 'fas fa-vr-cardboard' },
-        { name: 'Webots', icon: 'fas fa-globe' },
+        { name: 'RViz', icon: 'fas fa-cube' },
+        { name: 'Gazebo', icon: 'fas fa-mountain-sun' },
+        { name: 'MoveIt', icon: 'fas fa-bezier-curve' },
+        { name: 'SLAM', icon: 'fas fa-dumbbell' },
       ],
     },
     {
@@ -149,18 +159,23 @@
         { name: 'Linux', icon: 'fab fa-linux' },
         { name: 'Git', icon: 'fab fa-git-alt' },
         { name: 'CMake', icon: 'fas fa-gears' },
-        { name: 'conda', icon: 'fas fa-box-open' },
         { name: 'Docker', icon: 'fab fa-docker' },
-        { name: 'GitLab CI', icon: 'fab fa-gitlab' },
+      ],
+    },
+    {
+      category: 'skills.ai',
+      items: [
+        { name: 'ONNX', icon: 'fas fa-project-diagram' },
+        { name: 'AI Agent development', icon: 'fas fa-brain' },
       ],
     },
   ];
 
   const CONTACT_LINKS = [
-    { icon: 'fab fa-bilibili', key: 'contact.bilibili', link: 'https://space.bilibili.com/385516781/upload/video' },
-    { icon: 'fab fa-github', key: 'contact.github', link: 'https://github.com/Lain-Ego0' },
-    { icon: 'fab fa-twitter', key: 'contact.twitter', link: 'https://x.com/Lain_Ego0' },
-    { icon: 'fab fa-zhihu', key: 'contact.zhihu', link: 'https://www.zhihu.com/people/hua-99-50-21' },
+    // { icon: 'fab fa-bilibili', key: 'contact.bilibili', link: 'https://space.bilibili.com/340883303/upload/video' },
+    { icon: 'fab fa-github', key: 'contact.github', link: 'https://github.com/ztstc' },
+    // { icon: 'fab fa-zhihu', key: 'contact.zhihu', link: 'https://www.zhihu.com/people/hua-99-50-21' },
+    { text: 'CSDN', key: 'contact.csdn', link: 'https://blog.csdn.net/m0_44961830' },
   ];
 
   function qs(selector, root = document) {
@@ -283,14 +298,27 @@
     clear(container);
 
     TIMELINE_EVENTS.forEach((key) => {
+      // 守卫：lang 里没有这个事件（t() 回退为 key 字符串）就跳过
+      // 这样未来只要在 lang 文件加 eventN 数据，无需改 JS 数组
+      const dateVal = t(`${key}.date`);
+      if (dateVal === `${key}.date`) return;
+
       const item = document.createElement('div');
       item.className = 'timeline-item';
+      // 可选的外链（lang 里 link: { url, label }）
+      const linkData = t(`${key}.link`);
+      let linkHtml = '';
+      if (linkData && linkData.url) {
+        const label = linkData.label || 'Home';
+        linkHtml = `<a class="timeline-link" href="${linkData.url}" target="_blank" rel="noopener noreferrer"><i class="fas fa-home"></i> ${label}</a>`;
+      }
       item.innerHTML = `
         <div class="timeline-dot"></div>
-        <span class="timeline-date">${t(`${key}.date`)}</span>
+        <span class="timeline-date">${dateVal}</span>
         <div class="timeline-content">
           <h3>${t(`${key}.title`)}</h3>
           <p>${t(`${key}.desc`)}</p>
+          ${linkHtml}
         </div>
       `;
       container.appendChild(item);
@@ -328,7 +356,12 @@
       item.rel = 'noopener noreferrer';
       item.title = label;
       item.setAttribute('aria-label', label);
-      item.innerHTML = `<i class="${contact.icon}"></i>`;
+      // 优先用 text 字段（纯文字徽章），否则用 icon
+      if (contact.text) {
+        item.innerHTML = `<span class="contact-text">${contact.text}</span>`;
+      } else {
+        item.innerHTML = `<i class="${contact.icon}"></i>`;
+      }
       container.appendChild(item);
     });
   }

@@ -1,0 +1,13 @@
+﻿=== 1. Update detail HTML pages ===
+  project1.html: 1/1 images replaced
+  project2.html: 3/4 images replaced
+  project3.html: 3/3 images replaced
+  project4.html: 3/3 images replaced
+  project5.html: 1/4 images replaced
+
+=== 2. Verify ===
+  project1.html: ['IRU-wiki-cover.jpg']
+  project2.html: ['奶龙-封面.jpg', '奶龙底盘.jpg', '奶龙-侧视图.jpg']
+  project3.html: ['FOC_驱动板-封面.jpg', 'FOC_第一代.jpg', 'FOC_背面.jpg', 'robocon-detail-3.png']
+  project4.html: ['电脑性能看板-封面.jpg', '电脑性能看板-控制中心.jpg', '电脑性能看板.jpg', 'lobster-detail-3.png']
+  project5.html: ['BerryAI-封面.jpg']
