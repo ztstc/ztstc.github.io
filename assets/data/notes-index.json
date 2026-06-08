@@ -3,6 +3,72 @@
   "sidebarTitleEn": "Notes",
   "groups": [
     {
+      "title": "ros-tutorials",
+      "titleEn": "ros-tutorials",
+      "items": [
+        {
+          "path": "ros-tutorials/ROS 是什么？为什么要用 ROS？.md",
+          "title": "ROS 是什么？为什么要用 ROS？",
+          "titleEn": ""
+        },
+        {
+          "path": "ros-tutorials/ROS1 vs ROS2 迁移指南.md",
+          "title": "ROS1 vs ROS2 迁移指南",
+          "titleEn": ""
+        },
+        {
+          "path": "ros-tutorials/ROS1 入门教程.md",
+          "title": "ROS1 入门教程",
+          "titleEn": ""
+        },
+        {
+          "path": "ros-tutorials/ROS1 核心概念补充.md",
+          "title": "ROS1 核心概念补充",
+          "titleEn": ""
+        },
+        {
+          "path": "ros-tutorials/ROS2建图导航.md",
+          "title": "ROS2建图导航",
+          "titleEn": ""
+        },
+        {
+          "path": "ros-tutorials/VS Code 打造你的第一个 ROS包.md",
+          "title": "VS Code 打造你的第一个 ROS包",
+          "titleEn": ""
+        },
+        {
+          "path": "ros-tutorials/创建工作空间、包、编译.md",
+          "title": "创建工作空间、包、编译",
+          "titleEn": ""
+        },
+        {
+          "path": "ros-tutorials/安装Ubuntu20.04和ROS Noetic.md",
+          "title": "安装Ubuntu20\\.04和ROS Noetic",
+          "titleEn": ""
+        },
+        {
+          "path": "ros-tutorials/快速参考.md",
+          "title": "快速参考",
+          "titleEn": ""
+        },
+        {
+          "path": "ros-tutorials/摄像头接入ROS话题.md",
+          "title": "摄像头接入ROS话题",
+          "titleEn": ""
+        },
+        {
+          "path": "ros-tutorials/系统更新和ROS2安装.md",
+          "title": "系统更新和ROS2安装",
+          "titleEn": ""
+        },
+        {
+          "path": "ros-tutorials/配置激光雷达.md",
+          "title": "配置激光雷达",
+          "titleEn": ""
+        }
+      ]
+    },
+    {
       "title": "study",
       "titleEn": "study",
       "items": [
@@ -33,6 +99,11 @@
       "titleEn": "tools",
       "items": [
         {
+          "path": "tools/Latex使用手册.md",
+          "title": "Latex使用手册",
+          "titleEn": ""
+        },
+        {
           "path": "tools/git-copilot.md",
           "title": "Git & GitHub & Copilot使用指引",
           "titleEn": ""
@@ -41,6 +112,11 @@
           "path": "tools/rosbridge.md",
           "title": "基于Vue和ROSBridge开发的机器人控制面板",
           "titleEn": ""
+        },
+        {
+          "path": "tools/软件入门之conda指令.md",
+          "title": "软件入门之conda指令",
+          "titleEn": ""
         }
       ]
     },
@@ -48,6 +124,11 @@
       "title": "未分类",
       "titleEn": "Uncategorized",
       "items": [
+        {
+          "path": "IRU - 24知识库补全计划.md",
+          "title": "IRU \\- 24知识库补全计划",
+          "titleEn": ""
+        },
         {
           "path": "README.md",
           "title": "欢迎来到 Wiki",
