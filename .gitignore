@@ -23,6 +23,7 @@ node_modules/
 # ===== 临时 / 测试 / 缓存文件 =====
 .tmp-*
 .tmp-utf8-test.json
+.tmp-check*
 .codex/
 .cache/
 
