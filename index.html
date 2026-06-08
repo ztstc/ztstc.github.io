@@ -16,6 +16,10 @@
   <link rel="stylesheet" href="assets/css/notes.css">
   <link rel="stylesheet" href="assets/css/extras.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <!-- KaTeX（数学公式）-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <!-- highlight.js（代码高亮）主题：github 风格 -->
+  <link rel="stylesheet" id="hljs-theme" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github.min.css">
 </head>
 <body>
   <nav>
@@ -121,6 +125,10 @@
   <footer data-i18n="footer.copyright">© 2026 ztstc. All rights reserved.</footer>
 
   <script src="assets/vendor/marked.min.js" defer></script>
+  <!-- KaTeX + highlight.js（必须在 notes.js 之前加载完成）-->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/tabs.js"></script>

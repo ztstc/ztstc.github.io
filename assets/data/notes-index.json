@@ -9,62 +9,74 @@
         {
           "path": "ros-tutorials/ROS 是什么？为什么要用 ROS？.md",
           "title": "ROS 是什么？为什么要用 ROS？",
-          "titleEn": ""
+          "titleEn": "",
+          "tags": []
         },
         {
           "path": "ros-tutorials/ROS1 vs ROS2 迁移指南.md",
           "title": "ROS1 vs ROS2 迁移指南",
-          "titleEn": ""
+          "titleEn": "",
+          "tags": []
         },
         {
           "path": "ros-tutorials/ROS1 入门教程.md",
           "title": "ROS1 入门教程",
-          "titleEn": ""
+          "titleEn": "",
+          "tags": []
         },
         {
           "path": "ros-tutorials/ROS1 核心概念补充.md",
           "title": "ROS1 核心概念补充",
-          "titleEn": ""
+          "titleEn": "",
+          "tags": []
         },
         {
           "path": "ros-tutorials/ROS2建图导航.md",
           "title": "ROS2建图导航",
-          "titleEn": ""
+          "titleEn": "",
+          "tags": []
         },
         {
           "path": "ros-tutorials/VS Code 打造你的第一个 ROS包.md",
           "title": "VS Code 打造你的第一个 ROS包",
-          "titleEn": ""
+          "titleEn": "",
+          "tags": []
         },
         {
           "path": "ros-tutorials/创建工作空间、包、编译.md",
           "title": "创建工作空间、包、编译",
-          "titleEn": ""
+          "titleEn": "",
+          "tags": []
         },
         {
           "path": "ros-tutorials/安装Ubuntu20.04和ROS Noetic.md",
           "title": "安装Ubuntu20\\.04和ROS Noetic",
-          "titleEn": ""
+          "titleEn": "",
+          "tags": []
         },
         {
           "path": "ros-tutorials/快速参考.md",
           "title": "快速参考",
-          "titleEn": ""
+          "titleEn": "",
+          "tags": []
         },
         {
           "path": "ros-tutorials/摄像头接入ROS话题.md",
           "title": "摄像头接入ROS话题",
-          "titleEn": ""
+          "titleEn": "",
+          "tags": []
         },
         {
           "path": "ros-tutorials/系统更新和ROS2安装.md",
           "title": "系统更新和ROS2安装",
-          "titleEn": ""
+          "titleEn": "",
+          "tags": []
         },
         {
           "path": "ros-tutorials/配置激光雷达.md",
           "title": "配置激光雷达",
-          "titleEn": ""
+          "titleEn": "",
+          "tags": []
         }
       ]
     },
@@ -73,24 +85,57 @@
       "titleEn": "study",
       "items": [
         {
+          "path": "study/demo-features.md",
+          "title": "特性演示笔记",
+          "titleEn": "",
+          "tags": [
+            "demo",
+            "katex",
+            "highlight",
+            "test"
+          ],
+          "date": "2026-06-08",
+          "excerpt": "KaTeX 公式 + highlight.js 代码高亮 + 标签搜索的功能验证"
+        },
+        {
           "path": "study/dynamic-programming.md",
           "title": "动态规划基础",
-          "titleEn": "Dynamic Programming Basics"
+          "titleEn": "Dynamic Programming Basics",
+          "tags": [
+            "algorithm",
+            "dp"
+          ]
         },
         {
           "path": "study/fpga.md",
           "title": "FPGA 学习笔记 (Vivado 2025.2)",
-          "titleEn": "FPGA Study Notes (Vivado 2025.2)"
+          "titleEn": "FPGA Study Notes (Vivado 2025.2)",
+          "tags": [
+            "fpga",
+            "vivado",
+            "verilog",
+            "embedded"
+          ]
         },
         {
           "path": "study/git-cheatsheet.md",
           "title": "Git 速查",
-          "titleEn": "Git Cheatsheet"
+          "titleEn": "Git Cheatsheet",
+          "tags": [
+            "git",
+            "cheatsheet"
+          ]
         },
         {
           "path": "study/slam-notes.md",
           "title": "Slam Notes",
-          "titleEn": ""
+          "titleEn": "",
+          "tags": [
+            "slam",
+            "ros",
+            "navigation",
+            "mapping"
+          ]
         }
       ]
     },
@@ -101,22 +146,34 @@
         {
           "path": "tools/Latex使用手册.md",
           "title": "Latex使用手册",
-          "titleEn": ""
+          "titleEn": "",
+          "tags": []
         },
         {
           "path": "tools/git-copilot.md",
           "title": "Git & GitHub & Copilot使用指引",
-          "titleEn": ""
+          "titleEn": "",
+          "tags": [
+            "git",
+            "copilot",
+            "ai"
+          ]
         },
         {
           "path": "tools/rosbridge.md",
           "title": "基于Vue和ROSBridge开发的机器人控制面板",
-          "titleEn": ""
+          "titleEn": "",
+          "tags": [
+            "ros",
+            "bridge",
+            "middleware"
+          ]
         },
         {
           "path": "tools/软件入门之conda指令.md",
           "title": "软件入门之conda指令",
-          "titleEn": ""
+          "titleEn": "",
+          "tags": []
         }
       ]
     },
@@ -127,17 +184,20 @@
         {
           "path": "IRU - 24知识库补全计划.md",
           "title": "IRU \\- 24知识库补全计划",
-          "titleEn": ""
+          "titleEn": "",
+          "tags": []
         },
         {
           "path": "README.md",
           "title": "欢迎来到 Wiki",
-          "titleEn": "Welcome to the Wiki"
+          "titleEn": "Welcome to the Wiki",
+          "tags": []
         },
         {
           "path": "getting-started.md",
           "title": "如何新建一篇笔记",
-          "titleEn": "How to Add a Note"
+          "titleEn": "How to Add a Note",
+          "tags": []
         }
       ]
     }

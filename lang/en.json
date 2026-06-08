@@ -313,6 +313,8 @@
     "welcomeText": "Pick a note from the sidebar to start reading",
     "loading": "Loading…",
     "loadError": "Failed to load. Please check if the file exists.",
-    "empty": "No notes yet. Create your first .md in the notes/ folder."
+    "empty": "No notes yet. Create your first .md in the notes/ folder.",
+    "searchPlaceholder": "Search notes / tags…",
+    "searchNoResult": "No matching notes"
   }
 }

@@ -296,7 +296,9 @@
     "welcomeText": "从左侧选择一篇笔记开始阅读",
     "loading": "加载中…",
     "loadError": "加载失败，请检查文件是否存在。",
-    "empty": "还没有笔记，先在 notes/ 目录里写一篇吧~"
+    "empty": "还没有笔记，先在 notes/ 目录里写一篇吧~",
+    "searchPlaceholder": "搜索笔记 / 标签…",
+    "searchNoResult": "没有匹配的笔记"
   },
   "project5": {
     "title": "BerryAI 针对草莓的智能种植系统",

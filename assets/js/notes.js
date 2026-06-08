@@ -46,16 +46,30 @@
       return;
     }
 
+    // 把每个 item 的可搜索文本（title + tags）塞到 data-search 供过滤用
     const groupsHtml = indexData.groups.map((group, gi) => {
-      const gid = `g-${gi}`;
-      const items = (group.items || []).map((it) => `
-        <li><a class="notes-list-item" data-note-path="${escapeHtml(it.path)}" href="#notes?path=${encodeURIComponent(it.path)}">${escapeHtml(it.title)}</a></li>
-      `).join('');
+      const items = (group.items || []).map((it) => {
+        const searchBlob = [it.title || '', it.titleEn || '', ...(it.tags || [])].join(' ').toLowerCase();
+        const tagsHtml = (it.tags && it.tags.length)
+          ? `<span class="notes-tag-row">${it.tags.map(t => `<span class="notes-tag">${escapeHtml(t)}</span>`).join('')}</span>`
+          : '';
+        return `
+        <li>
+          <a class="notes-list-item" data-note-path="${escapeHtml(it.path)}" data-search="${escapeHtml(searchBlob)}" href="#notes?path=${encodeURIComponent(it.path)}">
+            <span class="notes-list-title">${escapeHtml(it.title)}</span>
+            ${tagsHtml}
+          </a>
+        </li>`;
+      }).join('');
       // 默认展开第一组
       const open = gi === 0 ? ' open' : '';
+      const count = (group.items || []).length;
       return `
-        <details class="notes-group"${open}>
-          <summary class="notes-group-title">${escapeHtml(group.title)}</summary>
+        <details class="notes-group"${open} data-group-key="${escapeHtml(group.title)}">
+          <summary class="notes-group-title">
+            <span class="notes-group-name">${escapeHtml(group.title)}</span>
+            <span class="notes-group-count">${count}</span>
+          </summary>
           <ul class="notes-list">${items}</ul>
         </details>
       `;
@@ -63,8 +77,58 @@
 
     sidebar.innerHTML = `
       <div class="notes-sidebar-title" data-i18n="notes.sidebarTitle">${escapeHtml(indexData.sidebarTitle || '笔记目录')}</div>
+      <div class="notes-search-box">
+        <i class="fa-solid fa-magnifying-glass notes-search-icon"></i>
+        <input type="search" id="notes-search-input" class="notes-search-input"
+               placeholder="${escapeHtml(window.i18n?.get?.('notes.searchPlaceholder') || '搜索笔记 / 标签…')}"
+               autocomplete="off" spellcheck="false">
+        <button type="button" id="notes-search-clear" class="notes-search-clear" aria-label="清空">×</button>
+      </div>
+      <div id="notes-search-empty" class="notes-search-empty" hidden>
+        ${escapeHtml(window.i18n?.get?.('notes.searchNoResult') || '没有匹配的笔记')}
+      </div>
       ${groupsHtml}
     `;
+
+    bindSearchBox();
+  }
+
+  // 搜索过滤：匹配 title + tags，隐藏 group 如果全空
+  function bindSearchBox() {
+    const input = document.getElementById('notes-search-input');
+    const clear = document.getElementById('notes-search-clear');
+    const emptyHint = document.getElementById('notes-search-empty');
+    if (!input) return;
+    const apply = (q) => {
+      q = (q || '').trim().toLowerCase();
+      clear.style.display = q ? 'block' : 'none';
+      let totalShown = 0;
+      document.querySelectorAll('.notes-group').forEach((group) => {
+        let shownInGroup = 0;
+        group.querySelectorAll('.notes-list-item').forEach((item) => {
+          const blob = item.dataset.search || '';
+          const ok = !q || blob.includes(q);
+          item.parentElement.style.display = ok ? '' : 'none';
+          if (ok) shownInGroup++;
+        });
+        // 组里没匹配就收起；非空搜索时全空就隐藏整组
+        if (q) {
+          group.style.display = shownInGroup ? '' : 'none';
+          if (shownInGroup) group.setAttribute('open', '');
+        } else {
+          group.style.display = '';
+          // 清空搜索时保留之前的手动展开/折叠（不强制重置）
+        }
+        totalShown += shownInGroup;
+      });
+      if (emptyHint) emptyHint.hidden = totalShown > 0;
+    };
+    input.addEventListener('input', (e) => apply(e.target.value));
+    clear.addEventListener('click', () => { input.value = ''; apply(''); input.focus(); });
+    // 支持 ESC 清空
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { input.value = ''; apply(''); }
+    });
   }
 
   function highlightActiveItem(path) {
@@ -109,6 +173,20 @@
       .replace(/^-+|-+$/g, '');
   }
 
+  // 用 hljs 高亮单个 code 块的内部 HTML（不包外层，让 marked 包）
+  function highlightCode(code, lang) {
+    const hljs = window.hljs;
+    if (!hljs) return null;
+    try {
+      if (lang && hljs.getLanguage(lang)) {
+        return hljs.highlight(code, { language: lang, ignoreIllegals: true }).value;
+      }
+      return hljs.highlightAuto(code).value;
+    } catch (e) {
+      return null;
+    }
+  }
+
   function configureMarked() {
     if (typeof window.marked === 'undefined') {
       console.warn('[notes] marked is not loaded');
@@ -124,8 +202,9 @@
     } catch (e) {
       console.warn('[notes] setOptions failed, falling back', e);
     }
-    // 兼容 marked v5+ / 旧版差异：用 renderer.heading 兜底注入 id，
-    // 让笔记里 [跳转](#xxx) 这种锚点能命中（fpga.md 等笔记依赖此功能）
+    // 兼容 marked v5+ / 旧版差异：
+    // 1) renderer.heading 兜底注入 id（让笔记里 [跳转](#xxx) 锚点命中）
+    // 2) walkTokens 在 code 块渲染前调 hljs 注入高亮 class
     try {
       const seen = new Set();
       window.marked.use({
@@ -140,11 +219,47 @@
             while (seen.has(unique)) { unique = `${id}-${n++}`; }
             seen.add(unique);
             return `<h${level} id="${unique}">${text}</h${level}>\n`;
+          },
+          code(code, lang) {
+            const highlighted = highlightCode(code, lang);
+            // 拼 class：hljs 是 hljs 主题配色前缀，language-xxx 标记语言
+            const langClass = lang ? ` language-${lang}` : '';
+            const cls = highlighted ? `hljs${langClass}` : langClass.trim();
+            const escaped = highlighted || escapeHtml(code);
+            return `<pre><code class="${cls}">${escaped}</code></pre>\n`;
           }
         }
       });
     } catch (e) {
       console.warn('[notes] renderer override failed', e);
+    }
+  }
+
+  // 主题切换时同步替换 highlight.js 主题样式
+  function syncHljsTheme() {
+    const link = document.getElementById('hljs-theme');
+    if (!link) return;
+    const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    link.setAttribute('href', dark
+      ? 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css'
+      : 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github.min.css');
+  }
+
+  // 在 viewer 内容里渲染 KaTeX 公式（$$...$$ 块级 / $...$ 行内）
+  function renderMathIn(root) {
+    if (!root || typeof window.renderMathInElement !== 'function') return;
+    try {
+      window.renderMathInElement(root, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false },
+          { left: '\\(', right: '\\)', display: false },
+          { left: '\\[', right: '\\]', display: true },
+        ],
+        throwOnError: false,
+      });
+    } catch (e) {
+      console.warn('[notes] KaTeX render failed', e);
     }
   }
 
@@ -196,6 +311,15 @@
         ${renderBreadcrumb(path, title)}
         <article class="notes-content">${html}</article>
       `;
+      // highlight.js 后处理：对所有 <pre><code> 调 highlightElement() 加 class
+      // 兼容 marked 任意版本，最稳的写法
+      if (window.hljs) {
+        viewer.querySelectorAll('pre code').forEach((block) => {
+          try { window.hljs.highlightElement(block); } catch (e) { /* ignore */ }
+        });
+      }
+      // KaTeX 后处理：在刚渲染的 viewer 里扫描 $...$ / $$...$$ 公式
+      renderMathIn(viewer);
     } catch (err) {
       if (myToken !== loadToken) return;
       console.error('[notes] failed to load', path, err);
@@ -272,6 +396,13 @@
   }
 
   async function init() {
+    configureMarked();
+    syncHljsTheme();
+    // 监听主题切换，动态替换 hljs 样式
+    new MutationObserver(syncHljsTheme).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme'],
+    });
     configureMarked();
     try {
       const indexData = await loadIndex();

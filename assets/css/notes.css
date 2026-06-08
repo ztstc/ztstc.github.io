@@ -122,6 +122,110 @@
   font-weight: 600;
 }
 
+/* === 搜索框（侧栏顶部） === */
+.notes-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 0 14px;
+  padding: 0 8px;
+}
+.notes-search-icon {
+  position: absolute;
+  left: 18px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  pointer-events: none;
+}
+.notes-search-input {
+  flex: 1;
+  width: 100%;
+  padding: 6px 28px 6px 30px;
+  font: inherit;
+  font-size: 0.82rem;
+  color: var(--text-main);
+  background: var(--bg-body);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  outline: none;
+  transition: border-color var(--duration-fast), box-shadow var(--duration-fast);
+}
+.notes-search-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-glow);
+}
+.notes-search-input::-webkit-search-cancel-button { display: none; }
+.notes-search-clear {
+  position: absolute;
+  right: 14px;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--text-muted);
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+}
+.notes-search-clear:hover { color: var(--primary); background: var(--bg-hover); }
+.notes-search-empty {
+  padding: 10px 12px;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-style: italic;
+}
+
+/* === 笔记项的标题行 + 标签行 === */
+.notes-list-item {
+  display: block;
+  padding: 6px 10px;
+  margin: 2px 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color var(--duration-fast), background-color var(--duration-fast);
+}
+.notes-list-item:hover {
+  color: var(--text-main);
+  background: var(--bg-hover);
+}
+.notes-list-item.active {
+  color: var(--primary);
+  background: var(--primary-glow);
+  font-weight: 600;
+}
+.notes-list-title { display: block; }
+.notes-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 3px;
+}
+.notes-tag {
+  display: inline-block;
+  padding: 1px 6px;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  background: var(--bg-hover);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  line-height: 1.4;
+}
+.notes-group-count {
+  margin-left: 6px;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  background: var(--bg-hover);
+  border-radius: 8px;
+  padding: 0 6px;
+}
+
 /* === Viewer === */
 .notes-viewer {
   min-height: 60vh;
@@ -250,15 +354,18 @@
 .notes-content pre {
   margin: 1em 0;
   padding: 14px 16px;
-  background: #0f172a;
-  color: #e2e8f0;
+  background: #f6f8fa;       /* github light 默认背景，dark 由 hljs-theme 切到 #0d1117 */
+  color: #24292e;
   border-radius: 8px;
   overflow-x: auto;
   font-size: 0.85rem;
   line-height: 1.55;
+  max-width: 100%;
+  white-space: pre;
+  word-break: normal;
 }
 [data-theme="dark"] .notes-content pre {
-  background: #0a0a0b;
+  background: #0d1117;
   border: 1px solid var(--border-light);
 }
 .notes-content pre code {
@@ -267,6 +374,7 @@
   color: inherit;
   font-size: inherit;
   border-radius: 0;
+  white-space: pre;
 }
 
 .notes-content blockquote {
@@ -312,7 +420,15 @@
 
 .notes-content pre {
   max-width: 100%;
-  white-space: pre-wrap;     /* 长代码 / 链接在小屏可折行 */
+  white-space: pre-wrap;     /* 兜底：长代码 / 链接在小屏可折行（hljs 主题时 pre 优先） */
   word-break: break-word;
 }
 .notes-content pre code { white-space: pre-wrap; }
+
+/* === KaTeX 渲染：让 display 公式有上下间距，避免与正文挤一起 === */
+.notes-content .katex-display {
+  margin: 1em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.notes-content .katex { font-size: 1.05em; }
