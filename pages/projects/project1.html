@@ -11,6 +11,7 @@
   </script>
 
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/tabs.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
@@ -22,13 +23,14 @@
       </a>
       
       <div class="nav-actions">
-        <div class="nav-links">
-          <a href="../../index.html#projects" data-i18n="nav.projects">Projects</a>
-          <a href="../../index.html#documents" data-i18n="nav.documents">Documents</a>
+        <div class="nav-tabs" role="tablist" aria-label="主导航">
+          <a class="tab-btn" role="tab" href="../../index.html#home"><span class="tab-label" data-i18n="tabs.home">首页</span></a>
+          <a class="tab-btn active" role="tab" aria-selected="true" href="../../index.html#projects"><span class="tab-label" data-i18n="tabs.projects">项目</span></a>
+          <a class="tab-btn" role="tab" href="../../index.html#notes"><span class="tab-label" data-i18n="tabs.notes">笔记</span></a>
         </div>
         
         <div class="nav-controls">
-          <button class="control-btn lang-toggle" aria-label="Toggle Language">涓枃</button>
+          <button class="control-btn lang-toggle" aria-label="Toggle Language">中文</button>
           <button class="control-btn theme-toggle" aria-label="Toggle Theme">
             <i class="fas fa-sun sun-icon"></i>
             <i class="fas fa-moon moon-icon"></i>
@@ -61,7 +63,7 @@
     </div>
   </section>
 
-  <footer data-i18n="footer.copyright">漏 2026 ztstc. All rights reserved.</footer>
+  <footer data-i18n="footer.copyright">© 2026 ztstc. All rights reserved.</footer>
 
   <script src="../../assets/js/i18n.js"></script>
   <script src="../../assets/js/main.js"></script>

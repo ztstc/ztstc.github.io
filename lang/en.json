@@ -31,10 +31,11 @@
       "title": "Nailoong Bot \"Milk Dragon Robot\"",
       "desc": "Two-wheel differential chassis robot project with full-stack development: mechanical design, chassis driver board, embedded software, ROS/ROS2 drivers, SLAM navigation, and emotional companion AI Agent.",
       "tags": [
-        "Robotics",
-        "Reinforcement Learning",
-        "Sim2Real",
-        "Deployment"
+        "RL",
+        "Embedded Systems",
+        "ROS",
+        "STM32",
+        "FreeRTOS"
       ]
     },
     "item3": {
@@ -42,20 +43,21 @@
       "desc": "FOC brushless motor project using ESP32S3+MP6540+MT6701. Supports Type-C PD power, temperature and current sensing. Hardware complete, driver tuning in progress.",
       "tags": [
         "Robotics",
-        "Motion Control",
-        "SLAM",
-        "LiDAR",
-        "Mechanical Design"
+        "FOC",
+        "Motor Control",
+        "Embedded Systems",
+        "ESP32"
       ]
     },
     "item4": {
       "title": "IoT PC Performance Dashboard (Waveshare ESP32P4 86 Box)",
       "desc": "IoT project using ESP32P4 driving a 4-inch LCD touchscreen, connects to PC monitoring app via TCP. Real-time CPU/GPU/memory stats, touch interaction to switch time, weather, and more.",
       "tags": [
-        "Underwater Robotics",
+        "LVGL",
         "Embedded Systems",
-        "Vector Propulsion",
-        "Waterproof Engineering"
+        "SquareLineStudio",
+        "ESP32",
+        "IOT"
       ]
     },
     "item5": {
@@ -63,9 +65,9 @@
       "desc": "For strawberry cultivation: 3 generations of soil-environment sensors, 1 micro water-fertilizer integration device, and a low-frame-rate greenhouse camera. All hardware based on ESP32 series. Open-source includes hardware and backend server (excluding the AI Agent part).",
       "tags": [
         "Agricultural Robotics",
-        "FreeRTOS",
-        "Motor Control",
-        "Multi-Robot Collaboration"
+        "Embedded Systems",
+        "ESP32",
+        "IOT"
       ]
     },
     "moreImages": "Show more images"
@@ -136,7 +138,7 @@
     "btnDoc": "Docs",
     "item1": {
       "title": "BRS Parallel Quadruped Robot",
-      "desc": "Project 'BLACK鈽哛OCK SHOOTER': A full-stack parallel structure quadruped robot. The complete solution is open-source and competed in the 2025 ROBOCON National Competition.",
+      "desc": "Project 'BLACK☆ROCK SHOOTER': A full-stack parallel structure quadruped robot. The complete solution is open-source and competed in the 2025 ROBOCON National Competition.",
       "tags": [
         "Robotics",
         "Mechanical Design",
@@ -222,64 +224,54 @@
   },
   "timeline": {
     "title": "Timeline",
-    "event11": {
-      "date": "2026.03 - Present",
-      "title": "Internship at Qianxing Intelligence",
-      "desc": "Responsible for motion control and human-robot interaction R&D for humanoid robots."
-    },
-    "event10": {
-      "date": "2026.03",
-      "title": "Launched LocoWiki Resource Hub",
-      "desc": "Launched the LocoWiki resource hub for robot competition preparation, research learning, and development reference, bringing together competition rules, technical sharing, paper reading lists, and high-quality open-source projects in one place."
-    },
     "event1": {
       "date": "2024.09",
       "title": "Joined HDU RAS-IRU Robotics Lab",
-      "desc": "Started learning ROS and participating in the lab's robotics project development and maintenance work.",
+      "desc": "Started learning ROS and participating in the lab’s robotics project development and maintenance work.",
       "link": {
         "url": "https://hdu-raslab.github.io/",
         "label": "RAS"
       }
     },
     "event2": {
-      "date": "2024.07",
-      "title": "2024 ROBOCON National Competition",
-      "desc": "Developed the embedded control system for the R1 robot based on FreeRTOS, achieving 卤5mm positioning accuracy, ball launching, and gripper functionalities."
+      "date": "2025.03",
+      "title": "Received Third-Class Scholarship",
+      "desc": ""
     },
     "event3": {
-      "date": "2024.08",
-      "title": "2024 Fujian Undergraduate Electronics Design Contest",
-      "desc": "Developed an autonomous driving car system based on the MSPM0G3507, qualifying for the provincial testing stage."
+      "date": "2025.06 - 2026.09",
+      "title": "Vice Minister of the Media & News Department, Student Union, Hangzhou Dianzi University Shengguangji College",
+      "desc": "Organized and participated in filming and recording of multiple college events; contributed to public WeChat article writing."
     },
     "event4": {
-      "date": "2024.11",
-      "title": "Fujian Intelligent Marine Equipment Design Competition",
-      "desc": "Led the development of the control system for a buoyancy-controlled multi-DOF lobster underwater robot, winning the Grand Prize."
+      "date": "2025.07",
+      "title": "Gold Award, 15th Zhejiang Province “Challenge Cup” Extracurricular Academic Sci-Tech Works Competition",
+      "desc": "As a core member of the “Strawberry Twice” team, designed and developed the IoT sensors, cameras, and water-fertilizer integrated equipment for a strawberry-cultivation intelligent monitoring system."
     },
     "event5": {
-      "date": "2024.12",
-      "title": "2024 World Marine Equipment Conference",
-      "desc": "Represented Fujian University of Technology as an exhibitor, showcasing the bionic Boston Lobster robot; covered by media outlets including Xinhua News Agency."
+      "date": "2025.08",
+      "title": "Gold Award, Zhejiang Province International College Students Innovation Competition (2025)",
+      "desc": "As a member of the “Strawberry Twice” team, designed and developed the IoT sensors, cameras, and water-fertilizer integrated equipment for a strawberry-cultivation intelligent monitoring system."
     },
     "event6": {
-      "date": "2025.07",
-      "title": "2025 ROBOCON National Competition",
-      "desc": "Responsible for full-stack R&D of the legged robot. Ranked 30th nationally in the Sprint Race, 31st in the Obstacle Race, and 34th in the Cross-Country Race, securing three National Second Prizes."
+      "date": "2025.10",
+      "title": "Received Second-Class Scholarship",
+      "desc": ""
     },
     "event7": {
-      "date": "2025.08",
-      "title": "2025 National Undergraduate Electronics Design Contest",
-      "desc": "Responsible for the hardware design and fabrication of the power meter for an automatic ranging system, winning the National Second Prize."
+      "date": "2025.12",
+      "title": "Second Prize, 4th Robotics Challenge of HDU-ITMO (Mapping & Navigation Speed Race)",
+      "desc": "As team captain, led the development and integration of the car’s chassis design, drive, mapping, and vision modules."
     },
     "event8": {
-      "date": "2025.09",
-      "title": "Open Source BRS Parallel Quadruped Robot",
-      "desc": "Open-sourced the mechanical structure and control code of the BRS parallel quadruped robot on GitHub."
+      "date": "2026.04",
+      "title": "Received First-Class Scholarship",
+      "desc": ""
     },
     "event9": {
-      "date": "2025.10 - 2026.03",
-      "title": "Internship at Gaoqing Electromechanical",
-      "desc": "Responsible for mechanical design, control algorithm development, and system integration testing for the HTDW4438 bionic quadruped robot (both open-source and commercial versions)."
+      "date": "2026.05",
+      "title": "Silver Award, 15th Zhejiang Province “Challenge Cup” College Students Entrepreneurship Plan Competition",
+      "desc": "As a core member of the “Weilin Technology” team, participated in on-site Q&A; the project (intelligent forestry-painting inspection robot) was exhibited and recognized."
     }
   },
   "skills": {
@@ -299,7 +291,7 @@
     "csdn": "CSDN Blog"
   },
   "footer": {
-    "copyright": "© 2023-2026 ztstc | Personal Homepage"
+    "copyright": "© 2026 ztstc | Personal Homepage"
   },
   "tabs": {
     "home": "Home",

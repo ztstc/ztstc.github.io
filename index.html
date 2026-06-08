@@ -30,6 +30,17 @@
       </a>
 
       <div class="nav-actions">
+        <div class="nav-tabs" role="tablist" aria-label="主导航">
+          <button class="tab-btn active" data-tab="home" role="tab" aria-selected="true" type="button">
+            <span class="tab-label" data-i18n="tabs.home">首页</span>
+          </button>
+          <button class="tab-btn" data-tab="projects" role="tab" aria-selected="false" type="button">
+            <span class="tab-label" data-i18n="tabs.projects">项目</span>
+          </button>
+          <button class="tab-btn" data-tab="notes" role="tab" aria-selected="false" type="button">
+            <span class="tab-label" data-i18n="tabs.notes">笔记</span>
+          </button>
+        </div>
         <div class="nav-controls">
           <button class="control-btn lang-toggle" aria-label="Toggle Language">中文</button>
           <button class="control-btn theme-toggle" aria-label="Toggle Theme">
@@ -40,24 +51,6 @@
       </div>
     </div>
   </nav>
-
-  <!-- Tab 栏 -->
-  <div class="tab-bar" role="tablist" aria-label="主导航">
-    <div class="tab-bar-inner">
-      <button class="tab-btn active" data-tab="home" role="tab" aria-selected="true" type="button">
-        <!-- <span class="tab-icon">🏠</span> -->
-        <span class="tab-label" data-i18n="tabs.home">首页</span>
-      </button>
-      <button class="tab-btn" data-tab="projects" role="tab" aria-selected="false" type="button">
-        <!-- <span class="tab-icon">🚀</span> -->
-        <span class="tab-label" data-i18n="tabs.projects">项目</span>
-      </button>
-      <button class="tab-btn" data-tab="notes" role="tab" aria-selected="false" type="button">
-        <!-- <span class="tab-icon">📚</span> -->
-        <span class="tab-label" data-i18n="tabs.notes">笔记</span>
-      </button>
-    </div>
-  </div>
 
   <main>
     <!-- Tab 1: Home -->
