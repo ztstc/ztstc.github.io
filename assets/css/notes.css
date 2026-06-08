@@ -317,10 +317,9 @@
 }
 .notes-content h2 {
   font-size: 1.5rem;
-  /* h2 不再画底边线，避免与 h1 视觉上"同层级"造成混乱 */
   padding-bottom: 0.15em;
-  border-left: 3px solid var(--primary);
-  padding-left: 0.5em;
+  /* 移除原先 border-left 蓝竖线：与某些主题下的下划线视觉重复 */
+  color: var(--text-main);
 }
 .notes-content h3 { font-size: 1.2rem; color: var(--text-main); }
 .notes-content h4 { font-size: 1.05rem; color: var(--text-muted); font-weight: 600; }
